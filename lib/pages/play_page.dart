@@ -21,15 +21,21 @@ class _PlayPageState extends State<PlayPage> {
     _controller = YoutubePlayerController.fromVideoId(
       videoId: widget.videoId,
       autoPlay: true,
-      params: YoutubePlayerParams(showControls: true, showFullscreenButton: true),
+      params: YoutubePlayerParams(
+        showControls: true,
+        showFullscreenButton: true,
+      ),
     );
+  }
+  @override
+  void dispose() {
+    _controller.close();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final video = ll.firstWhere(
-          (v) => v.videoId == widget.videoId,
-    );
+    final video = ll.firstWhere((v) => v.videoId == widget.videoId);
     return Scaffold(
       backgroundColor: Color(0xFF0019A7),
       appBar: AppBar(
@@ -39,7 +45,10 @@ class _PlayPageState extends State<PlayPage> {
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text("MeleTube", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        title: Text(
+          "MeleTube",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -58,10 +67,17 @@ class _PlayPageState extends State<PlayPage> {
                 children: [
                   Text(
                     video.desk,
-                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   SizedBox(height: 5),
-                  Text(video.tayang, style: TextStyle(color: Colors.white70, fontSize: 12)),
+                  Text(
+                    video.tayang,
+                    style: TextStyle(color: Colors.white70, fontSize: 12),
+                  ),
                   SizedBox(height: 15),
 
                   Row(
@@ -73,37 +89,77 @@ class _PlayPageState extends State<PlayPage> {
                           }
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => FavoritePage()),
+                            MaterialPageRoute(
+                              builder: (context) => FavoritePage(),
+                            ),
                           );
                         },
-                        child: Icon(Icons.favorite, color: Colors.red, size: 20),
-                      ),                      SizedBox(width: 5),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                          size: 20,
+                        ),
+                      ),
+                      SizedBox(width: 5),
                       Text(video.likes, style: TextStyle(color: Colors.white)),
                       SizedBox(width: 15),
-                      Icon(Icons.thumb_down_alt_outlined, color: Colors.white, size: 20),
+                      Icon(
+                        Icons.thumb_down_alt_outlined,
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ],
                   ),
                   SizedBox(height: 20),
                   Row(
                     children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        child: Icon(Icons.person, color: Color(0xFF0019A7)),
+                      CircleAvatar(backgroundImage: AssetImage("assets/images/owo.jpg"),),
+                      SizedBox(width: 10),
+                      Text(
+                        "Jitun",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                       SizedBox(width: 10),
-                      Text("Jitun", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
                       Spacer(),
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFF4285F4),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
-                        child:Text("Follow", style: TextStyle(color: Colors.white)),
+                        child: Text(
+                          "Follow",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ],
                   ),
-                  ListView.builder(itemBuilder: (context, index) {},)
+                  Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: ll.length,
+                      itemBuilder: (context, index) {
+                        final v = ll[index];
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: _buildVideoRekomentasi(
+                            v.tittle,
+                            v.views,
+                            v.author,
+                            v.videoId,
+                            v.thumbnailUrl
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -113,31 +169,64 @@ class _PlayPageState extends State<PlayPage> {
     );
   }
 
-  Widget _buildVideoRekomentasi(String title, String views, String author) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: 120,
-          height: 70,
-          decoration: BoxDecoration(
-            color: Colors.black26,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Icon(Icons.play_circle_fill, color: Colors.white),
+  Widget _buildVideoRekomentasi(
+    String title,
+    String views,
+    String author,
+    String videoId, 
+      String thumbnailUrl,
+  ) {
+    return InkWell(
+        onTap: () {
+          _controller.pauseVideo(); // ⛔ hentikan video lama dulu
+
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PlayPage(videoId: videoId),
+            ),
+          );
+        },
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 120,
+              height: 70,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(thumbnailUrl)),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(Icons.play_circle_fill, color: Colors.white),
+            ),
+            SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    views,
+                    style: TextStyle(color: Colors.white70, fontSize: 12),
+                  ),
+                  Text(
+                    "👤 $author",
+                    style: TextStyle(color: Colors.white70, fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        SizedBox(width: 10),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-              Text(views, style: TextStyle(color: Colors.white70, fontSize: 12)),
-              Text("👤 $author", style: TextStyle(color: Colors.white70, fontSize: 12)),
-            ],
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

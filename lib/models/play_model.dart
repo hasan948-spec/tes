@@ -7,6 +7,8 @@ class PlayModel {
   final String videoId;
   final String tayang;
   final String desk;
+  final String chnName;
+  final String imgChn;
 
   PlayModel({
     required this.tittle,
@@ -17,6 +19,7 @@ class PlayModel {
     required this.videoId,
     required this.tayang,
     required this.desk,
-
+    required this.chnName,
+    required this.imgChn,
   });
 }
