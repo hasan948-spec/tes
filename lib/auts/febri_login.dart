@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tes/auts/febri_regist.dart';
+import 'package:tes/pages/home_page.dart';
 
 class FebriLogin extends StatefulWidget {
   const FebriLogin({super.key});
@@ -11,6 +12,7 @@ class FebriLogin extends StatefulWidget {
 class _FebriLoginState extends State<FebriLogin> {
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();
+  final TextEditingController _email = TextEditingController();
   bool _isObscure = true;
   IconData _isObscureIcon = Icons.remove_red_eye_outlined;
 
@@ -90,7 +92,7 @@ class _FebriLoginState extends State<FebriLogin> {
                     ],
                   ),
                   TextField(
-                    controller: _username,
+                    controller: _email,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       hintText: 'Email',
@@ -176,12 +178,12 @@ class _FebriLoginState extends State<FebriLogin> {
                       ),
                     ),
                     onPressed: () {
-                      if (_username.text == "MAJIE" &&
-                          _password.text == "Malji Gendeng") {
+                      if (_username.text == "ika" &&
+                          _password.text == "yanti") {
                         showDialog(
                           context: context,
                           builder: (context) =>
-                              AlertDialog(title: Text("Login sukses !")),
+                              HomePage()
                         );
                       } else {
                         showDialog(
