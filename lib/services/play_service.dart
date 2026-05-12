@@ -89,5 +89,16 @@ List<PlayModel> ll = [
     chnName: "Kim Hasan",
     imgChn: "imgChn",
   ),
-  PlayModel(tittle: "", views: "2M", author: "BoyCord", likes: "2M", thumbnailUrl:   "assets/images/kicau.jpg", videoId: "5k4llr0of_k", tayang: "2M", desk: "KICAU MANIA - NDARBOY GENK x BANDITOZ YAOW 86 (OFFICIAL LYRIC VIDEO) GAS POL NDANGAK", chnName: "Boy Cord Music", imgChn: "imgChn")
+  PlayModel(
+    tittle: "KICAUUUUUUUUUUUUUU",
+    views: "2M",
+    author: "BoyCord",
+    likes: "2M",
+    thumbnailUrl: "assets/images/kicau.jpg",
+    videoId: "5k4llr0of_k",
+    tayang: "2M",
+    desk: "KICAU MANIA - NDARBOY GENK x BANDITOZ YAOW 86 (OFFICIAL LYRIC VIDEO) GAS POL NDANGAK",
+    chnName: "Boy Cord Music",
+    imgChn: "imgChn",
+  ),
 ];
