@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'febri_login.dart';
+import 'package:tes/auts/febri_login.dart';
 
 class FebriRegister extends StatefulWidget {
   const FebriRegister({super.key});
@@ -39,30 +38,28 @@ class _FebriRegisterState extends State<FebriRegister> {
         width: size.width,
         height: size.height,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.blueAccent, Colors.redAccent],
-          ),
+          color: Color(0xFF0019A7)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "DAFTAR",
+              "Register",
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
-                color: Colors.white70,
-                shadows: [Shadow(offset: Offset(1, 1), blurRadius: 5)],
+                color: Colors.white,
               ),
             ),
+            Icon(Icons.person,size: 300,color: Colors.white,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'NAMA',
+                  'Username',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white70,
+                    color: Colors.white,
                   ),
                 ),
               ],
@@ -70,8 +67,8 @@ class _FebriRegisterState extends State<FebriRegister> {
             TextField(
               controller: _mail,
               decoration: InputDecoration(
-                hintText: "Namamu",
-                fillColor: Colors.transparent,
+                hintText: "Username",
+                fillColor: Colors.white,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -83,10 +80,10 @@ class _FebriRegisterState extends State<FebriRegister> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Username',
+                  'Email',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white70,
+                    color: Colors.white,
                   ),
                 ),
               ],
@@ -94,8 +91,8 @@ class _FebriRegisterState extends State<FebriRegister> {
             TextField(
               controller: _nme,
               decoration: InputDecoration(
-                hintText: "Username",
-                fillColor: Colors.transparent,
+                hintText: "Email",
+                fillColor: Colors.white,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -120,7 +117,7 @@ class _FebriRegisterState extends State<FebriRegister> {
               obscureText: _regis,
               decoration: InputDecoration(
                 hintText: "Password",
-                fillColor: Colors.transparent,
+                fillColor: Colors.white,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -146,7 +143,7 @@ class _FebriRegisterState extends State<FebriRegister> {
               obscureText: _regis,
               decoration: InputDecoration(
                 hintText: "Confirm Password",
-                fillColor: Colors.transparent,
+                fillColor: Colors.white,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -160,23 +157,6 @@ class _FebriRegisterState extends State<FebriRegister> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.redAccent,
-                    side: BorderSide(color: Colors.blue),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => FebriLogin(),
-                        ));
-                  },
-                  child: Text("BACK"),
-                ),
                 ElevatedButton(
                   onPressed: () {
                     if (_mail.text == _mail.text && _pwe.text == _pwea.text) {

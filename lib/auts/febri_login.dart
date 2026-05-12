@@ -14,7 +14,6 @@ class _FebriLoginState extends State<FebriLogin> {
   bool _isObscure = true;
   IconData _isObscureIcon = Icons.remove_red_eye_outlined;
 
-
   void isObscureText() {
     if (_isObscure) {
       _isObscure = false;
@@ -29,47 +28,26 @@ class _FebriLoginState extends State<FebriLogin> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        width: size.width,
-        height: size.height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.redAccent, Colors.lightBlueAccent],
-          ),
-        ),
-        padding: const EdgeInsets.all(20),
-        child: Center(
-          child: Card(
-            color: Colors.transparent,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(color: Color(0xFF0019A7)),
+          padding: const EdgeInsets.all(20),
+          child: Center(
             child: Padding(
               padding: const EdgeInsets.all(60),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "KEKEBALAN TUBUH APP",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black54,
-                          fontSize: 28,
-                          shadows: [
-                            BoxShadow(
-                              offset: Offset(1, 1),
-                              color: Colors.white70,
-                              blurRadius: 3,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                  Text(
+                    "Login",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 50,
+                      color: Colors.white,
+                    ),
                   ),
-                  SizedBox(height: 45),
+                  Icon(Icons.person, size: 250, color: Colors.white),
+                  SizedBox(height: 22),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -90,7 +68,35 @@ class _FebriLoginState extends State<FebriLogin> {
                       hintText: 'username',
                       alignLabelWithHint: true,
                       focusColor: Colors.transparent,
-                      fillColor: Colors.transparent,
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(width: 10),
+                      Text(
+                        "Email",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white70,
+                        ),
+                      ),
+                    ],
+                  ),
+                  TextField(
+                    controller: _username,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      hintText: 'Email',
+                      alignLabelWithHint: true,
+                      focusColor: Colors.transparent,
+                      fillColor: Colors.white,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
@@ -122,12 +128,12 @@ class _FebriLoginState extends State<FebriLogin> {
                             isObscureText();
                           });
                         },
-                        icon: Icon(_isObscureIcon, color: Colors.white70),
+                        icon: Icon(_isObscureIcon, color: Colors.black),
                       ),
                       hintText: 'pasword',
                       alignLabelWithHint: true,
                       focusColor: Colors.transparent,
-                      fillColor: Colors.transparent,
+                      fillColor: Colors.white,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
@@ -135,56 +141,57 @@ class _FebriLoginState extends State<FebriLogin> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  SizedBox(height: 25),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      OutlinedButton(
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.blueAccent,
-                          side: BorderSide(color: Colors.blue),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
+                      Text(
+                        "belum punya acount?",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      TextButton(
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => FebriRegister()),
+                            MaterialPageRoute(
+                              builder: (context) => FebriRegister(),
+                            ),
                           );
                         },
-                        child: Text("Daftar"),
-                      ),
-                      SizedBox(width: 30),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
-                          foregroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                        child: Text(
+                          'Daftar',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blueAccent,
                           ),
                         ),
-                        onPressed: () {
-                          if (_username.text == "MAJIE" &&
-                              _password.text == "Malji Gendeng") {
-                            showDialog(
-                              context: context,
-                              builder: (context) =>
-                                  AlertDialog(title: Text("Login sukses !")),
-                            );
-                          } else {
-                            showDialog(
-                              context: context,
-                              builder: (context) => AlertDialog(
-                                title: Text("Login Gagal"),
-                              ),
-                            );
-                          }
-                        },
-                        child: Text("Login"),
                       ),
                     ],
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    onPressed: () {
+                      if (_username.text == "MAJIE" &&
+                          _password.text == "Malji Gendeng") {
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              AlertDialog(title: Text("Login sukses !")),
+                        );
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              AlertDialog(title: Text("Login Gagal")),
+                        );
+                      }
+                    },
+                    child: Text("Login"),
                   ),
                 ],
               ),
