@@ -39,7 +39,7 @@ class _Febri_SplashScreenState extends State<Febri_SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/raook.png'),
+            Image.asset('assets/images/ruokff.png'),
             Text(
               'MeleTube',
               style: TextStyle(

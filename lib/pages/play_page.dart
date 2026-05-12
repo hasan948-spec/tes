@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:tes/models/follow_model.dart';
+import 'package:tes/pages/follow_page.dart';
 import 'package:tes/services/play_service.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import 'package:tes/services/favorite_service.dart';
 import 'package:tes/pages/favorite_page.dart';
+
+import '../services/follow_service.dart';
 
 class PlayPage extends StatefulWidget {
   final String videoId;
@@ -113,19 +117,56 @@ class _PlayPageState extends State<PlayPage> {
                   SizedBox(height: 20),
                   Row(
                     children: [
-                      CircleAvatar(backgroundImage: AssetImage("assets/images/owo.jpg"),),
-                      SizedBox(width: 10),
-                      Text(
-                        "Jitun",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      CircleAvatar(
+                        radius: 22,
+                        backgroundImage: AssetImage(video.thumbnailUrl),
                       ),
+
+                      SizedBox(width: 10),
+
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            video.author,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+
+                          Text(
+                            "${video.views} subscriber",
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+
                       Spacer(),
+
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+
+                          nyr.add(
+                            FollowModel(
+                              name: video.author,
+                              img: video.thumbnailUrl,
+                              jmlflw: video.views,
+                              jmlhlk: video.likes,
+                            ),
+                          );
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FollowPage(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFF4285F4),
                           shape: RoundedRectangleBorder(
@@ -178,7 +219,7 @@ class _PlayPageState extends State<PlayPage> {
   ) {
     return InkWell(
         onTap: () {
-          _controller.pauseVideo(); // ⛔ hentikan video lama dulu
+          _controller.pauseVideo();
 
           Navigator.pushReplacement(
             context,
