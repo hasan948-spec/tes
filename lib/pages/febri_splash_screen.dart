@@ -10,7 +10,7 @@ class Febri_SplashScreen extends StatefulWidget {
   @override
   State<Febri_SplashScreen> createState() => _Febri_SplashScreenState();
 }
-//ghfbvdfvdfg
+
 class _Febri_SplashScreenState extends State<Febri_SplashScreen> {
   late Timer t;
 
@@ -39,7 +39,7 @@ class _Febri_SplashScreenState extends State<Febri_SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/raook.png'),
+            Image.asset('assets/images/ruokff.png'),
             Text(
               'MeleTube',
               style: TextStyle(
