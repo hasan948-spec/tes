@@ -28,6 +28,9 @@ class _PlayPageState extends State<PlayPage> {
       params: YoutubePlayerParams(
         showControls: true,
         showFullscreenButton: true,
+        playsInline: true,
+        strictRelatedVideos: true,
+        enableCaption: false
       ),
     );
   }

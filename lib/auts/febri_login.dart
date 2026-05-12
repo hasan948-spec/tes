@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tes/auts/febri_regist.dart';
+import 'package:tes/pages/home_page.dart';
 
 class FebriLogin extends StatefulWidget {
   const FebriLogin({super.key});
@@ -10,6 +11,7 @@ class FebriLogin extends StatefulWidget {
 
 class _FebriLoginState extends State<FebriLogin> {
   final TextEditingController _username = TextEditingController();
+  final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   bool _isObscure = true;
   IconData _isObscureIcon = Icons.remove_red_eye_outlined;
@@ -30,14 +32,17 @@ class _FebriLoginState extends State<FebriLogin> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(color: Color(0xFF0019A7)),
-          padding: const EdgeInsets.all(20),
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            color: Color(0xFF0019A7),
+          ),
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.all(60),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
-                mainAxisSize: MainAxisSize.min,
                 children: [
+                  SizedBox(height: 100),
                   Text(
                     "Login",
                     style: TextStyle(
@@ -46,14 +51,14 @@ class _FebriLoginState extends State<FebriLogin> {
                       color: Colors.white,
                     ),
                   ),
-                  Icon(Icons.person, size: 250, color: Colors.white),
-                  SizedBox(height: 22),
+                  Icon(Icons.person, size: 300, color: Colors.white),
+                  SizedBox(height: 15),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(width: 10),
                       Text(
-                        "Username",
+                        "Username atau Email",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white70,
@@ -66,34 +71,6 @@ class _FebriLoginState extends State<FebriLogin> {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       hintText: 'username',
-                      alignLabelWithHint: true,
-                      focusColor: Colors.transparent,
-                      fillColor: Colors.white,
-                      filled: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(width: 10),
-                      Text(
-                        "Email",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white70,
-                        ),
-                      ),
-                    ],
-                  ),
-                  TextField(
-                    controller: _username,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      hintText: 'Email',
                       alignLabelWithHint: true,
                       focusColor: Colors.transparent,
                       fillColor: Colors.white,
@@ -176,12 +153,12 @@ class _FebriLoginState extends State<FebriLogin> {
                       ),
                     ),
                     onPressed: () {
-                      if (_username.text == "MAJIE" &&
-                          _password.text == "Malji Gendeng") {
+                      if (_username.text == "Owo@mele.com" || _username.text == "Sir Owo" &&
+                          _password.text == "Owo mbledos") {
                         showDialog(
                           context: context,
                           builder: (context) =>
-                              AlertDialog(title: Text("Login sukses !")),
+                              HomePage()
                         );
                       } else {
                         showDialog(

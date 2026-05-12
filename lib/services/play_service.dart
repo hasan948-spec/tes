@@ -2,7 +2,7 @@ import 'package:tes/models/play_model.dart';
 
 List<PlayModel> ll = [
   PlayModel(
-    tittle: "Ruok full gameplay style thailand - Free Fire",
+    tittle: "Ruok full gameplay style thailand - Free Fire 31",
     views: "98K views",
     author: "Ruok",
     likes: "80K",
