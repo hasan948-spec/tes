@@ -93,7 +93,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                 controller: _pwe,
                 obscureText: _regis,
                 decoration: InputDecoration(
-                  hintText: "Password",
+                  hintText: "Passwordd",
                   fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(
