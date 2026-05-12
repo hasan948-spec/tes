@@ -52,7 +52,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   color: Colors.white,
                 ),
               ),
-              Icon(Icons.person,size: 300,color: Colors.white,),
+              Icon(Icons.person,size: 180,color: Colors.white,),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -76,31 +76,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   ),
                 ),
               ),
-              SizedBox(height: 18),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Email',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              TextField(
-                controller: _nme,
-                decoration: InputDecoration(
-                  hintText: "Email",
-                  fillColor: Colors.white,
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              ),
-              SizedBox(height: 18),
+              SizedBox(height: 12),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -126,7 +102,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   suffixIcon: IconButton(onPressed: eye, icon: Icon(_eye)),
                 ),
               ),
-              SizedBox(height: 18),
+              SizedBox(height: 12),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -152,9 +128,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   suffixIcon: IconButton(onPressed: eye, icon: Icon(_eye)),
                 ),
               ),
-              SizedBox(height: 15),
-        
-              SizedBox(height: 20),
+              SizedBox(height: 12),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

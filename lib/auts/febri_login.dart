@@ -42,7 +42,7 @@ class _FebriLoginState extends State<FebriLogin> {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 children: [
-                  SizedBox(height: 100),
+                  SizedBox(height: 40),
                   Text(
                     "Login",
                     style: TextStyle(
@@ -51,7 +51,7 @@ class _FebriLoginState extends State<FebriLogin> {
                       color: Colors.white,
                     ),
                   ),
-                  Icon(Icons.person, size: 300, color: Colors.white),
+                  Icon(Icons.person, size: 180, color: Colors.white),
                   SizedBox(height: 15),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
