@@ -11,7 +11,6 @@ class FavoritePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF0019A7),
-
       appBar: AppBar(
         backgroundColor: const Color(0xFF0019A7),
         elevation: 0,
@@ -36,7 +35,6 @@ class FavoritePage extends StatelessWidget {
               views: video.views,
               author: video.chnName,
               likes: video.likes,
-
               onTap: () {
                 Navigator.push(
                   context,

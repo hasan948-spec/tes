@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
               sbtl: v.tittle,
               view: v.views,
               favor: v.likes,
-              chn: v.author,
+              chn: v.chnName,
             ),
           );
         },

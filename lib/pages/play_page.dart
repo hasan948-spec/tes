@@ -85,7 +85,7 @@ class _PlayPageState extends State<PlayPage> {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    video.tayang,
+                    video.views,
                     style: TextStyle(
                       color: Colors.white70,
                     ),
@@ -134,7 +134,7 @@ class _PlayPageState extends State<PlayPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            video.author,
+                            video.chnName,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -155,7 +155,7 @@ class _PlayPageState extends State<PlayPage> {
                         onPressed: () {
                           nyr.add(
                             FollowModel(
-                              name: video.author,
+                              name: video.chnName,
                               img: video.imgChn,
                               jmlflw: video.views,
                               jmlhlk: video.likes,
@@ -189,7 +189,7 @@ class _PlayPageState extends State<PlayPage> {
                         img: data.thumbnailUrl,
                         ttl: data.tittle,
                         views: data.views,
-                        author: data.author,
+                        author: data.chnName,
                         onTap: () {
                           controller.pauseVideo();
                           Navigator.pushReplacement(
