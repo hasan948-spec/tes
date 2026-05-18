@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:tes/auts/febri_login.dart';
+import 'package:tes/pages/dashboard_page.dart';
 
 class FebriRegister extends StatefulWidget {
   const FebriRegister({super.key});
@@ -9,22 +11,35 @@ class FebriRegister extends StatefulWidget {
 }
 
 class _FebriRegisterState extends State<FebriRegister> {
-  final TextEditingController _nme = TextEditingController();
   final TextEditingController _pwe = TextEditingController();
   final TextEditingController _pwea = TextEditingController();
   final TextEditingController _mail = TextEditingController();
 
-  IconData _eye = Icons.remove_red_eye;
+  IconData _eye = CupertinoIcons.eye_slash_fill;
+  IconData _mata = CupertinoIcons.eye_slash_fill;
   bool _regis = true;
+  bool _regs = true;
 
   void eye() {
     setState(() {
       if (_regis) {
         _regis = false;
-        _eye = Icons.remove_red_eye_outlined;
+        _eye = Icons.remove_red_eye;
       } else {
         _regis = true;
-        _eye = Icons.remove_red_eye;
+        _eye = CupertinoIcons.eye_slash_fill;
+      }
+    });
+  }
+
+  void mata() {
+    setState(() {
+      if (_regs) {
+        _regs = false;
+        _mata = Icons.remove_red_eye_rounded;
+      } else {
+        _regs = true;
+        _mata = CupertinoIcons.eye_slash_fill;
       }
     });
   }
@@ -81,7 +96,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Passwaord',
+                    'Password',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white70,
@@ -117,7 +132,7 @@ class _FebriRegisterState extends State<FebriRegister> {
               ),
               TextField(
                 controller: _pwea,
-                obscureText: _regis,
+                obscureText: _regs,
                 decoration: InputDecoration(
                   hintText: "Confirm Password",
                   fillColor: Colors.white,
@@ -125,20 +140,24 @@ class _FebriRegisterState extends State<FebriRegister> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  suffixIcon: IconButton(onPressed: eye, icon: Icon(_eye)),
+                  suffixIcon: IconButton(onPressed: mata, icon: Icon(_mata)),
                 ),
               ),
               SizedBox(height: 12),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  ElevatedButton(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => FebriLogin(),));
+                  }, child: Text("Batal")),
+                  SizedBox(width: 50),
                   ElevatedButton(
                     onPressed: () {
                       if (_mail.text == _mail.text && _pwe.text == _pwea.text) {
                         showDialog(
-                          context: context,
-                          builder: (context) =>
-                              AlertDialog(title: Text(' Register Berhasil')),
+                            context: context,
+                            builder: (context) =>
+                                DashboardPage()
                         );
                       } else {
                         showDialog(
@@ -149,7 +168,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                         );
                       }
                     },
-                    child: Text("REGIST"),
+                    child: Text("Regist"),
                   ),
                 ],
               ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:tes/auts/febri_regist.dart';
+import 'package:tes/pages/dashboard_page.dart';
 import 'package:tes/pages/home_page.dart';
 
 class FebriLogin extends StatefulWidget {
@@ -13,16 +15,16 @@ class _FebriLoginState extends State<FebriLogin> {
   final TextEditingController _username = TextEditingController();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
-  bool _isObscure = true;
-  IconData _isObscureIcon = Icons.remove_red_eye_outlined;
+  bool _isTdk = true;
+  IconData _isTdkIcon = CupertinoIcons.eye_slash_fill;
 
   void isObscureText() {
-    if (_isObscure) {
-      _isObscure = false;
-      _isObscureIcon = Icons.remove_red_eye_outlined;
+    if (_isTdk) {
+      _isTdk = false;
+      _isTdkIcon = Icons.remove_red_eye;
     } else {
-      _isObscure = true;
-      _isObscureIcon = Icons.remove_red_eye;
+      _isTdk = true;
+      _isTdkIcon = CupertinoIcons.eye_slash_fill;
     }
   }
 
@@ -97,7 +99,7 @@ class _FebriLoginState extends State<FebriLogin> {
                   TextField(
                     controller: _password,
                     keyboardType: TextInputType.text,
-                    obscureText: _isObscure,
+                    obscureText: _isTdk,
                     decoration: InputDecoration(
                       suffixIcon: IconButton(
                         onPressed: () {
@@ -105,7 +107,7 @@ class _FebriLoginState extends State<FebriLogin> {
                             isObscureText();
                           });
                         },
-                        icon: Icon(_isObscureIcon, color: Colors.black),
+                        icon: Icon(_isTdkIcon, color: Colors.black),
                       ),
                       hintText: 'pasword',
                       alignLabelWithHint: true,
@@ -158,7 +160,7 @@ class _FebriLoginState extends State<FebriLogin> {
                         showDialog(
                           context: context,
                           builder: (context) =>
-                              HomePage()
+                              DashboardPage()
                         );
                       } else {
                         showDialog(
