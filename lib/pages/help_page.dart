@@ -34,7 +34,7 @@ class _HelpPageState extends State<HelpPage> {
               ),
             ),
             Text(
-              "If you experience problems while using the application, please make sure your internet connection is stable and the application is updated to the latest version.For further assistance, please contact our support team through the contact feature available in the application.",
+              "If you experience problems while using the application, please make sure your internet connection is stable and the application is updated to the latest version.For further assistance, please contact our support team through the contact feature available in the application",
               style: TextStyle(color: Colors.white),
             ),
           ],

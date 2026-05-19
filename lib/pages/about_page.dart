@@ -34,7 +34,7 @@ class _AboutPageState extends State<AboutPage> {
               ),
             ),
             Text(
-              "This app was designed to provide a simple, fast, and convenient experience for users. With a simple interface and modern features, users can enjoy a variety of content, save favorites, and navigate the app more easily. Thank you for using our app.",
+              "This app was designed to provide a simple, fast, and convenient experience for users. With a simple interface and modern features, users can enjoy a variety of content, save favorites, and navigate the app more easily. Thank you for using our app",
               style: TextStyle(color: Colors.white),
             ),
             SizedBox(height: 25),

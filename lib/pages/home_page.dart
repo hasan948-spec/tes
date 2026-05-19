@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue.shade900,
         title: const Text(
-          "MeleTube",
+          "MeleTubee",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,

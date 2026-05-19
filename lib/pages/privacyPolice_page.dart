@@ -34,7 +34,7 @@ class _PrivacypolicePageState extends State<PrivacypolicePage> {
               ),
             ),
             Text(
-              "Your privacy is important to us. This application only collects the information needed to improve user experience and application performance. We do not share your personal information with third parties without your permission.By using this application, you agree to the collection and use of information in accordance with this policy. We are committed to keeping your data safe and secure.",
+              "Your privacy is important to us. This application only collects the information needed to improve user experience and application performance. We do not share your personal information with third parties without your permission.By using this application, you agree to the collection and use of information in accordance with this policy. We are committed to keeping your data safe and secure",
               style: TextStyle(color: Colors.white),
             ),
           ],

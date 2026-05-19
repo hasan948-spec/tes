@@ -42,7 +42,7 @@ class _DaftardevPageState extends State<DaftardevPage> {
               style: TextStyle(color: Colors.white,fontSize: 15),
             ),
             Text(
-              "Muhammad Riko Fardana X-RPL-2",
+              "Mohammad Riko Fardana X-RPL-2",
               style: TextStyle(color: Colors.white,fontSize: 15),
             ),
           ],
