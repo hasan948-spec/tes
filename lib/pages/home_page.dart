@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
           "MeleTube",
           style: TextStyle(color: Colors.white),
         ),
+        centerTitle: true,
       ),
       drawer: DrawerWidget(),
       body: ListView.builder(

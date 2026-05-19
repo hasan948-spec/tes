@@ -53,9 +53,7 @@ class _FebriRegisterState extends State<FebriRegister> {
           padding: EdgeInsets.symmetric(horizontal: 30),
           width: size.width,
           height: size.height,
-          decoration: BoxDecoration(
-            color: Color(0xFF0019A7)
-          ),
+          decoration: BoxDecoration(color: Color(0xFF0019A7)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -67,7 +65,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   color: Colors.white,
                 ),
               ),
-              Icon(Icons.person,size: 180,color: Colors.white,),
+              Icon(Icons.person, size: 180, color: Colors.white),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -147,24 +145,28 @@ class _FebriRegisterState extends State<FebriRegister> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => FebriLogin(),));
-                  }, child: Text("Batal")),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FebriLogin()),
+                      );
+                    },
+                    child: Text("Batal"),
+                  ),
                   SizedBox(width: 50),
                   ElevatedButton(
                     onPressed: () {
                       if (_mail.text == _mail.text && _pwe.text == _pwea.text) {
                         showDialog(
-                            context: context,
-                            builder: (context) =>
-                                DashboardPage()
+                          context: context,
+                          builder: (context) => DashboardPage(),
                         );
-                      } else {
+                      } else if (_pwe.text.isEmpty || _pwea.text.isEmpty) {
                         showDialog(
                           context: context,
-                          builder: (context) => AlertDialog(
-                            title: Text("GAGAL Regist"),
-                          ),
+                          builder: (context) =>
+                              AlertDialog(title: Text("GAGAL Regist")),
                         );
                       }
                     },

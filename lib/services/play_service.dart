@@ -95,4 +95,14 @@ List<PlayModel> ll = [
     chnName: "Ustadz Hasan",
     imgChn: "assets/images/gojo.jpg",
   ),
+  PlayModel(
+    tittle: "BREAKBEAT BAILAR | BLACK HOLE SLOW REVERB LIRIK | REMIX DJ TELOOR",
+    views: "1M",
+    likes: "20K",
+    thumbnailUrl: "assets/images/blackHole.jpg",
+    videoId: "EpmpO8gkkaM",
+    desk: "BREAKBEAT BAILAR | BLACK HOLE SLOW REVERB LIRIK | REMIX DJ TELOOR",
+    chnName: "DJ TELOOR",
+    imgChn: "assets/images/gojo.jpg",
+  ),
 ];

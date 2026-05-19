@@ -31,7 +31,10 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Sir owo", style: TextStyle(color: Colors.white, fontSize: 20)),
+                  Text(
+                    "Sir owo",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
                   Text("owo@mele.com", style: TextStyle(color: Colors.white70)),
                 ],
               ),
@@ -85,14 +88,55 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           Container(
             height: 45,
             width: 180,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.red),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.red,
+            ),
             child: ListTile(
               leading: Icon(Icons.logout, color: Colors.white),
               title: Text("Logout", style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FebriLogin()),
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text(
+                      "Apakah Anda yakin untuk logout",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: Colors.blue.shade900,
+                    actions: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FebriLogin(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Yes",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStatePropertyAll(Colors.red),
+                        ),
+                      ),
+                      SizedBox(width: 200),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          "No",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStatePropertyAll(Colors.green),
+                        ),
+                      ),
+                    ],
+                  ),
                 );
               },
             ),
