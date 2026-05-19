@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FavoriteWidget extends StatelessWidget {
-  final String imgchn;
+  final String thumb;
   final String ttl;
   final String views;
   final String author;
@@ -10,7 +10,7 @@ class FavoriteWidget extends StatelessWidget {
 
   FavoriteWidget({
     super.key,
-    required this.imgchn,
+    required this.thumb,
     required this.ttl,
     required this.views,
     required this.author,
@@ -36,7 +36,7 @@ class FavoriteWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
 
                 image: DecorationImage(
-                  image: AssetImage(imgchn),
+                  image: AssetImage(thumb),
                   fit: BoxFit.cover,
                 ),
               ),

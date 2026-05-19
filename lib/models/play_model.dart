@@ -7,6 +7,8 @@ class PlayModel {
   final String desk;
   final String chnName;
   final String imgChn;
+  final String subs;
+
 
   PlayModel({
     required this.tittle,
@@ -17,5 +19,6 @@ class PlayModel {
     required this.desk,
     required this.chnName,
     required this.imgChn,
+    required this.subs,
   });
 }

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tes/widgets/play_widget.dart';
+import 'package:tes/widgets/category_widget.dart';
+import 'package:tes/widgets/channel_widget.dart';
+import 'package:tes/widgets/rekomen_widget.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
-import 'package:tes/models/follow_model.dart';
 import 'package:tes/pages/favorite_page.dart';
-import 'package:tes/pages/follow_page.dart';
 import 'package:tes/services/favorite_service.dart';
-import 'package:tes/services/follow_service.dart';
 import 'package:tes/services/play_service.dart';
 
 class PlayPage extends StatefulWidget {
@@ -43,10 +42,8 @@ class _PlayPageState extends State<PlayPage> {
   @override
   Widget build(BuildContext context) {
     final video = ll.firstWhere((e) => e.videoId == widget.videoId);
-
     return Scaffold(
       backgroundColor: Color(0xFF0019A7),
-
       appBar: AppBar(
         backgroundColor: Color(0xFF0019A7),
         centerTitle: true,
@@ -85,125 +82,17 @@ class _PlayPageState extends State<PlayPage> {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    video.views,
+                    "${video.views} view",
                     style: TextStyle(
                       color: Colors.white70,
                     ),
                   ),
-                  SizedBox(height: 15),
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          if (!favorite.contains(video)) {
-                            favorite.add(video);
-                          }
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => FavoritePage(),
-                            ),
-                          );
-                        },
-                        child: Icon(
-                          Icons.favorite,
-                          color: Colors.red,
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      Text(
-                        video.likes,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      SizedBox(width: 15),
-                      Icon(
-                        Icons.thumb_down_alt_outlined,
-                        color: Colors.white,
-                      ),
-                    ],
-                  ),
+                  SizedBox(height: 12),
+                  CategoryWidget(),
                   SizedBox(height: 20),
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 22,
-                        backgroundImage: AssetImage(video.imgChn),
-                      ),
-                      SizedBox(width: 10),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            video.chnName,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17,
-                            ),
-                          ),
-                          Text(
-                            "${video.views} subscriber",
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Spacer(),
-                      ElevatedButton(
-                        onPressed: () {
-                          nyr.add(
-                            FollowModel(
-                              name: video.chnName,
-                              img: video.imgChn,
-                              jmlflw: video.views,
-                              jmlhlk: video.likes,
-                            ),
-                          );
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => FollowPage(),
-                            ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF4285F4),
-                        ),
-                        child: Text(
-                          "Follow",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
+                  ChannelWidget(),
                   SizedBox(height: 20),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: ll.length,
-                    itemBuilder: (context, index) {
-                      final data = ll[index];
-                      return PlayWidget(
-                        img: data.thumbnailUrl,
-                        ttl: data.tittle,
-                        views: data.views,
-                        author: data.chnName,
-                        onTap: () {
-                          controller.pauseVideo();
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => PlayPage(
-                                videoId: data.videoId,
-                              ),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
+                  RekomenWidget(videoId: video.videoId)
                 ],
               ),
             ),

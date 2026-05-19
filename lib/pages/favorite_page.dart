@@ -30,7 +30,7 @@ class FavoritePage extends StatelessWidget {
           itemBuilder: (context, index) {
             final video = favorite[index];
             return FavoriteWidget(
-              imgchn: video.imgChn,
+              thumb: video.thumbnailUrl,
               ttl: video.tittle,
               views: video.views,
               author: video.chnName,

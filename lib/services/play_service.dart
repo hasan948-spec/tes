@@ -3,17 +3,18 @@ import 'package:tes/models/play_model.dart';
 List<PlayModel> ll = [
   PlayModel(
     tittle: "Ruok full gameplay style thailand - Free Fire 31",
-    views: "98K views",
+    views: "98K",
     likes: "80K",
     thumbnailUrl: "assets/images/ruok.jpg",
     videoId: "FLXDQ4D5Ww4",
     desk: "Ruok full gameplay style thailand #209 - Free Fire",
     chnName: "Ruok",
     imgChn: "assets/images/owo.jpg",
+    subs: '10K',
   ),
   PlayModel(
     tittle: "Pes indonesia event terbaru",
-    views: "12K views",
+    views: "12K",
     likes: "80K",
     thumbnailUrl: "assets/images/pes.jpg",
     videoId: "MTEXgUp6owA",
@@ -21,21 +22,23 @@ List<PlayModel> ll = [
         "VIDEO BIKIN NGAKAK!! UZUMAKI NEYMAR KUN !! SELEBRASI SPESIAL & TEMBAKAN RASENGAN SHURIKEN !!",
     chnName: "Ruok",
     imgChn: "assets/images/gojo.jpg",
+    subs: "35jt"
   ),
   PlayModel(
     tittle: "Dave, Tems - Raindance (Lyrics)",
-    views: "900K views",
+    views: "900K",
     likes: "80K",
     thumbnailUrl: "assets/images/raindance.jpg",
     videoId: "bhoybya39QU",
     desk: "Dave, Tems - Raindance (Lyrics)",
     chnName: "Ruok",
     imgChn: "assets/images/owo.jpg",
+    subs: "25K"
   ),
   PlayModel(
     tittle:
         "FUNKOT - MUTIARA [ADAKAH KENYAMANAN DIHATIMU] NEW 2025 BY DJ ALMIRA BERTO",
-    views: "18K views",
+    views: "18K",
     likes: "80K",
     thumbnailUrl: "assets/images/almira.jpg",
     videoId: "-BgcQudVhgM",
@@ -43,37 +46,41 @@ List<PlayModel> ll = [
         "FUNKOT - MUTIARA [ADAKAH KENYAMANAN DIHATIMU] NEW 2025 BY DJ ALMIRA BERTO",
     chnName: "Almira Berto",
     imgChn: "assets/images/owo.jpg",
+    subs: "25K"
   ),
   PlayModel(
     tittle: "MPL ID S17 | Regular Season Hari 3 Minggu 7 | Bahasa Indonesia",
-    views: "1098 views",
+    views: "1098",
     likes: "80K",
     thumbnailUrl: "assets/images/mpl.jpg",
     videoId: "BzpXLE1SR1s",
     desk: "MPL ID S17 | Regular Season Hari 3 Minggu 7 | Bahasa Indonesia",
     chnName: "MPL",
     imgChn: "assets/images/owo.jpg",
+     subs: "25jt"
   ),
   PlayModel(
     tittle:
         "Sean Paul - Give It Up To Me (feat. Keyshia Cole) [Official Video]",
-    views: "1M views",
+    views: "1M",
     likes: "100K",
     thumbnailUrl: "assets/images/spul.jpg",
     videoId: "f84PvI_xe8k",
     desk: "when you gonna",
     chnName: "Lemes",
     imgChn: "assets/images/gojo.jpg",
+    subs: "24K"
   ),
   PlayModel(
     tittle: "WOWWWW belajar coding untuk pemula dijamin work no paswot",
-    views: "200K view",
+    views: "200K",
     likes: "20K like",
     thumbnailUrl: "assets/images/blcd.jpg",
     videoId: "LooycZiMn6s",
     desk: "tutorial coding untuk lu lu pada",
     chnName: "Kim Hasan",
     imgChn: "assets/images/owo.jpg",
+    subs: "30K"
   ),
   PlayModel(
     tittle: "KICAUUUUUUUUUUUUUU",
@@ -85,6 +92,7 @@ List<PlayModel> ll = [
         "KICAU MANIA - NDARBOY GENK x BANDITOZ YAOW 86 (OFFICIAL LYRIC VIDEO) GAS POL NDANGAK",
     chnName: "Boy Cord Music",
     imgChn: "assets/images/gojo.jpg",
+    subs: "25K"
   ),
   PlayModel(
     tittle: "AL-QURAN 30 juz",
@@ -95,6 +103,7 @@ List<PlayModel> ll = [
     desk: "ALQURAN 30 JUZ FULL MERDU TANPA IKLAN",
     chnName: "Ustadz Hasan",
     imgChn: "assets/images/gojo.jpg",
+    subs: "78K"
   ),
   PlayModel(
     tittle: "BREAKBEAT BAILAR | BLACK HOLE SLOW REVERB LIRIK | REMIX DJ TELOOR",
@@ -105,6 +114,7 @@ List<PlayModel> ll = [
     desk: "BREAKBEAT BAILAR | BLACK HOLE SLOW REVERB LIRIK | REMIX DJ TELOOR",
     chnName: "DJ TELOOR",
     imgChn: "assets/images/gojo.jpg",
+    subs: "90K"
   ),
   PlayModel(
     tittle: "alwys loving you",
@@ -116,5 +126,6 @@ List<PlayModel> ll = [
         "DJ ALWAYS LOVING YOU BREAKBEAT TERBARU 2024 BY DJ Herjuana | Slowed & Reverb",
     chnName: "DJ pinpin",
     imgChn: "imgChn",
+    subs: "50K"
   ),
 ];

@@ -47,7 +47,7 @@ class VideoWidget extends StatelessWidget {
                   style: TextStyle(color: Colors.white70, fontSize: 12),
                 ),
                 Text(
-                  view,
+                  "${view} view",
                   maxLines: 2,
                   style: TextStyle(color: Colors.white70, fontSize: 12),
                 ),
