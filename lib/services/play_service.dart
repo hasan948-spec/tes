@@ -10,7 +10,7 @@ List<PlayModel> ll = [
     desk: "Ruok full gameplay style thailand #209 - Free Fire",
     chnName: "Ruok",
     imgChn: "assets/images/owo.jpg",
-    subs: '10K',
+    subs: '11K',
   ),
   PlayModel(
     tittle: "Pes indonesia event terbaru",
