@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:tes/pages/dashboard_page.dart';
-import 'package:tes/pages/home_page.dart';
+import 'package:flutter/material.dart'; 
 import 'package:tes/pages/febri_splash_screen.dart';
 
-void main () {
+void main() {
   runApp(MyApp());
 }
 
@@ -17,6 +15,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false,home: Febri_SplashScreen(),);
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Febri_SplashScreen(),
+    );
   }
 }

@@ -31,7 +31,6 @@ class _FebriRegisterState extends State<FebriRegister> {
       }
     });
   }
-
   void mata() {
     setState(() {
       if (_regs) {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:tes/auts/febri_regist.dart';
 import 'package:tes/pages/dashboard_page.dart';
-import 'package:tes/pages/home_page.dart';
 
 class FebriLogin extends StatefulWidget {
   const FebriLogin({super.key});
@@ -36,9 +35,7 @@ class _FebriLoginState extends State<FebriLogin> {
         child: Container(
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            color: Color(0xFF0019A7),
-          ),
+          decoration: BoxDecoration(color: Color(0xFF0019A7)),
           child: Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -60,7 +57,7 @@ class _FebriLoginState extends State<FebriLogin> {
                     children: [
                       SizedBox(width: 10),
                       Text(
-                        "Username atau Email",
+                        "Username atau Gmail",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white70,
@@ -155,12 +152,12 @@ class _FebriLoginState extends State<FebriLogin> {
                       ),
                     ),
                     onPressed: () {
-                      if (_username.text == "mpeks" || _username.text == "Sir Owo" &&
-                          _password.text == "owo ") {
+                      if (_username.text == "mpeks" ||
+                          _username.text == "Sir Owo" &&
+                              _password.text == "owo ") {
                         showDialog(
                           context: context,
-                          builder: (context) =>
-                              DashboardPage()
+                          builder: (context) => DashboardPage(),
                         );
                       } else {
                         showDialog(

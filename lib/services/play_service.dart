@@ -81,7 +81,8 @@ List<PlayModel> ll = [
     likes: "2M",
     thumbnailUrl: "assets/images/kicau.jpg",
     videoId: "5k4llr0of_k",
-    desk: "KICAU MANIA - NDARBOY GENK x BANDITOZ YAOW 86 (OFFICIAL LYRIC VIDEO) GAS POL NDANGAK",
+    desk:
+        "KICAU MANIA - NDARBOY GENK x BANDITOZ YAOW 86 (OFFICIAL LYRIC VIDEO) GAS POL NDANGAK",
     chnName: "Boy Cord Music",
     imgChn: "assets/images/gojo.jpg",
   ),
@@ -104,5 +105,16 @@ List<PlayModel> ll = [
     desk: "BREAKBEAT BAILAR | BLACK HOLE SLOW REVERB LIRIK | REMIX DJ TELOOR",
     chnName: "DJ TELOOR",
     imgChn: "assets/images/gojo.jpg",
+  ),
+  PlayModel(
+    tittle: "alwys loving you",
+    views: "300K",
+    likes: "1M",
+    thumbnailUrl: "assets/images/vvv.jpg",
+    videoId: "Z4b8w2xNRlU",
+    desk:
+        "DJ ALWAYS LOVING YOU BREAKBEAT TERBARU 2024 BY DJ Herjuana | Slowed & Reverb",
+    chnName: "DJ pinpin",
+    imgChn: "imgChn",
   ),
 ];
