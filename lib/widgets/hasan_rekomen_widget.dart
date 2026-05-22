@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:tes/pages/play_page.dart';
-import 'package:tes/services/play_service.dart';
-import 'package:tes/widgets/play_widget.dart';
+import 'package:tes/pages/hasan_play_page.dart';
+import 'package:tes/services/hasan_play_service.dart';
+import 'package:tes/widgets/hasan_play_widget.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-class RekomenWidget extends StatefulWidget {
+class HasanRekomenWidget extends StatefulWidget {
   final String videoId;
-  const RekomenWidget({super.key, required this.videoId});
+  const HasanRekomenWidget({super.key, required this.videoId});
 
   @override
-  State<RekomenWidget> createState() => _RekomenWidgetState();
+  State<HasanRekomenWidget> createState() => _HasanRekomenWidgetState();
 }
 
-class _RekomenWidgetState extends State<RekomenWidget> {
+class _HasanRekomenWidgetState extends State<HasanRekomenWidget> {
   late YoutubePlayerController controller;
 
   @override
@@ -42,7 +42,7 @@ class _RekomenWidgetState extends State<RekomenWidget> {
       itemCount: ll.length,
       itemBuilder: (context, index) {
         final data = ll[index];
-        return PlayWidget(
+        return HasanPlayWidget(
           img: data.thumbnailUrl,
           ttl: data.tittle,
           views: data.views,
@@ -52,7 +52,7 @@ class _RekomenWidgetState extends State<RekomenWidget> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (_) => PlayPage(
+                builder: (_) => HasanPlayPage(
                   videoId: data.videoId,
                 ),
               ),

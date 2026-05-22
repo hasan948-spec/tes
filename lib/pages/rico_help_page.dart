@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class PrivacypolicePage extends StatefulWidget {
-  const PrivacypolicePage({super.key});
+class RicoHelpPage extends StatefulWidget {
+  const RicoHelpPage({super.key});
 
   @override
-  State<PrivacypolicePage> createState() => _PrivacypolicePageState();
+  State<RicoHelpPage> createState() => _RicoHelpPageState();
 }
 
-class _PrivacypolicePageState extends State<PrivacypolicePage> {
+class _RicoHelpPageState extends State<RicoHelpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Back", style: TextStyle(fontWeight: FontWeight.bold)),
         flexibleSpace: Container(
-          decoration: BoxDecoration(color: Color(0xFF0019A7)),
+          decoration: BoxDecoration(color: Colors.blue.shade900),
         ),
       ),
       backgroundColor: Color(0xFF0019A7),
@@ -34,7 +34,7 @@ class _PrivacypolicePageState extends State<PrivacypolicePage> {
               ),
             ),
             Text(
-              "Your privacy is important to us. This application only collects the information needed to improve user experience and application performance. We do not share your personal information with third parties without your permission.By using this application, you agree to the collection and use of information in accordance with this policy. We are committed to keeping your data safe and secure",
+              "If you experience problems while using the application, please make sure your internet connection is stable and the application is updated to the latest version.For further assistance, please contact our support team through the contact feature available in the application",
               style: TextStyle(color: Colors.white),
             ),
           ],

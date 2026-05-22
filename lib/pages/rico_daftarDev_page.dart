@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class AboutPage extends StatefulWidget {
-  const AboutPage({super.key});
+class RicoDaftardevPage extends StatefulWidget {
+  const RicoDaftardevPage({super.key});
 
   @override
-  State<AboutPage> createState() => _AboutPageState();
+  State<RicoDaftardevPage> createState() => _RicoDaftardevPageState();
 }
 
-class _AboutPageState extends State<AboutPage> {
+class _RicoDaftardevPageState extends State<RicoDaftardevPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Back", style: TextStyle(fontWeight: FontWeight.bold)),
         flexibleSpace: Container(
-          decoration: BoxDecoration(color: Color(0xFF0019A7)),
+          decoration: BoxDecoration(color: Colors.blue.shade900),
         ),
       ),
       backgroundColor: Color(0xFF0019A7),
@@ -23,9 +23,9 @@ class _AboutPageState extends State<AboutPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             ListTile(
-              leading: Icon(Icons.info, size: 25, color: Colors.white),
+              leading: Icon(Icons.people, size: 25, color: Colors.white),
               title: Text(
-                "About",
+                "Daftar Developer",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
@@ -34,11 +34,17 @@ class _AboutPageState extends State<AboutPage> {
               ),
             ),
             Text(
-              "This app was designed to provide a simple, fast, and convenient experience for users. With a simple interface and modern features, users can enjoy a variety of content, save favorites, and navigate the app more easily. Thank you for using our app",
-              style: TextStyle(color: Colors.white),
+              "Hasan X-RPL-2",
+              style: TextStyle(color: Colors.white,fontSize: 15),
             ),
-            SizedBox(height: 25),
-            Text("Version 019.86", style: TextStyle(color: Colors.white)),
+            Text(
+              "Febri Naro X-RPL-2",
+              style: TextStyle(color: Colors.white,fontSize: 15),
+            ),
+            Text(
+              "Mohammad Riko Fardana X-RPL-2",
+              style: TextStyle(color: Colors.white,fontSize: 15),
+            ),
           ],
         ),
       ),

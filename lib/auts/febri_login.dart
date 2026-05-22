@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:tes/auts/febri_regist.dart';
-import 'package:tes/pages/dashboard_page.dart';
+import 'package:tes/pages/hasan_dashboard_page.dart';
 
 class FebriLogin extends StatefulWidget {
   const FebriLogin({super.key});
@@ -157,7 +157,7 @@ class _FebriLoginState extends State<FebriLogin> {
                               _password.text == "owo ") {
                         showDialog(
                           context: context,
-                          builder: (context) => DashboardPage(),
+                          builder: (context) => HasanDashboardPage(),
                         );
                       } else {
                         showDialog(

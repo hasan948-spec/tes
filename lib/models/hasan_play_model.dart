@@ -1,4 +1,4 @@
-class PlayModel {
+class HasanPlayModel {
   final String tittle;
   final String views;
   final String likes;
@@ -10,7 +10,7 @@ class PlayModel {
   final String subs;
 
 
-  PlayModel({
+  HasanPlayModel({
     required this.tittle,
     required this.views,
     required this.likes,

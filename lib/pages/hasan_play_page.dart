@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:tes/widgets/category_widget.dart';
-import 'package:tes/widgets/channel_widget.dart';
-import 'package:tes/widgets/rekomen_widget.dart';
+import 'package:tes/widgets/hasan_category_widget.dart';
+import 'package:tes/widgets/hasan_channel_widget.dart';
+import 'package:tes/widgets/hasan_rekomen_widget.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
-import 'package:tes/pages/favorite_page.dart';
-import 'package:tes/services/favorite_service.dart';
-import 'package:tes/services/play_service.dart';
+import 'package:tes/pages/hasan_favorite_page.dart';
+import 'package:tes/services/hasan_favorite_service.dart';
+import 'package:tes/services/hasan_play_service.dart';
 
-class PlayPage extends StatefulWidget {
+class HasanPlayPage extends StatefulWidget {
   final String videoId;
 
-  PlayPage({super.key, required this.videoId});
+  HasanPlayPage({super.key, required this.videoId});
 
   @override
-  State<PlayPage> createState() => _PlayPageState();
+  State<HasanPlayPage> createState() => _HasanPlayPageState();
 }
 
-class _PlayPageState extends State<PlayPage> {
+class _HasanPlayPageState extends State<HasanPlayPage> {
   late YoutubePlayerController controller;
 
   @override
@@ -43,10 +43,8 @@ class _PlayPageState extends State<PlayPage> {
   Widget build(BuildContext context) {
     final video = ll.firstWhere((e) => e.videoId == widget.videoId);
     return Scaffold(
-      backgroundColor: Color(0xFF0019A7),
       appBar: AppBar(
-        backgroundColor: Color(0xFF0019A7),
-        centerTitle: true,
+        backgroundColor: Colors.blue.shade900,
         title: Text(
           "MeleTube",
           style: TextStyle(
@@ -54,11 +52,8 @@ class _PlayPageState extends State<PlayPage> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-        ),
       ),
+      backgroundColor: Colors.blue.shade900,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,9 +85,9 @@ class _PlayPageState extends State<PlayPage> {
                   SizedBox(height: 12),
                   CategoryWidget(),
                   SizedBox(height: 20),
-                  ChannelWidget(),
+                  HasanChannelWidget(),
                   SizedBox(height: 20),
-                  RekomenWidget(videoId: video.videoId)
+                  HasanRekomenWidget(videoId: video.videoId)
                 ],
               ),
             ),

@@ -1,7 +1,7 @@
-import 'package:tes/models/play_model.dart';
+import 'package:tes/models/hasan_play_model.dart';
 
-List<PlayModel> ll = [
-  PlayModel(
+List<HasanPlayModel> ll = [
+  HasanPlayModel(
     tittle: "Ruok full gameplay style thailand - Free Fire 31",
     views: "98K",
     likes: "80K",
@@ -12,7 +12,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/owo.jpg",
     subs: '11K',
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle: "Pes indonesia event terbaru",
     views: "12K",
     likes: "80K",
@@ -24,7 +24,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/gojo.jpg",
     subs: "35jt"
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle: "Dave, Tems - Raindance (Lyrics)",
     views: "900K",
     likes: "80K",
@@ -35,7 +35,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/owo.jpg",
     subs: "25K"
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle:
         "FUNKOT - MUTIARA [ADAKAH KENYAMANAN DIHATIMU] NEW 2025 BY DJ ALMIRA BERTO",
     views: "18K",
@@ -48,7 +48,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/owo.jpg",
     subs: "25K"
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle: "MPL ID S17 | Regular Season Hari 3 Minggu 7 | Bahasa Indonesia",
     views: "1098",
     likes: "80K",
@@ -59,7 +59,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/owo.jpg",
      subs: "25jt"
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle:
         "Sean Paul - Give It Up To Me (feat. Keyshia Cole) [Official Video]",
     views: "1M",
@@ -71,7 +71,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/gojo.jpg",
     subs: "24K"
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle: "WOWWWW belajar coding untuk pemula dijamin work no paswot",
     views: "200K",
     likes: "20K like",
@@ -82,7 +82,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/owo.jpg",
     subs: "30K"
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle: "KICAUUUUUUUUUUUUUU",
     views: "2M",
     likes: "2M",
@@ -94,7 +94,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/gojo.jpg",
     subs: "25K"
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle: "AL-QURAN 30 juz",
     views: "3M",
     likes: "31K",
@@ -105,7 +105,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/gojo.jpg",
     subs: "78K"
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle: "BREAKBEAT BAILAR | BLACK HOLE SLOW REVERB LIRIK | REMIX DJ TELOOR",
     views: "1M",
     likes: "20K",
@@ -116,7 +116,7 @@ List<PlayModel> ll = [
     imgChn: "assets/images/gojo.jpg",
     subs: "90K"
   ),
-  PlayModel(
+  HasanPlayModel(
     tittle: "alwys loving you",
     views: "300K",
     likes: "1M",

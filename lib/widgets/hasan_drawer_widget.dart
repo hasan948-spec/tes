@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:tes/auts/febri_login.dart';
-import 'package:tes/pages/about_page.dart';
-import 'package:tes/pages/daftarDev_page.dart';
-import 'package:tes/pages/help_page.dart';
-import 'package:tes/pages/privacyPolice_page.dart';
+import 'package:tes/pages/rico_about_page.dart';
+import 'package:tes/pages/rico_daftarDev_page.dart';
+import 'package:tes/pages/rico_help_page.dart';
+import 'package:tes/pages/rico_privacy_page.dart';
 
-class DrawerWidget extends StatefulWidget {
-  const DrawerWidget({super.key});
+class HasanDrawerWidget extends StatefulWidget {
+  const HasanDrawerWidget({super.key});
 
   @override
-  State<DrawerWidget> createState() => _DrawerWidgetState();
+  State<HasanDrawerWidget> createState() => _HasanDrawerWidgetState();
 }
 
-class _DrawerWidgetState extends State<DrawerWidget> {
+class _HasanDrawerWidgetState extends State<HasanDrawerWidget> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -50,7 +50,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => PrivacypolicePage()),
+                MaterialPageRoute(builder: (context) => RicoPrivacypolicePage()),
               );
             },
           ),
@@ -60,7 +60,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DaftardevPage()),
+                MaterialPageRoute(builder: (context) => RicoDaftardevPage()),
               );
             },
           ),
@@ -70,7 +70,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HelpPage()),
+                MaterialPageRoute(builder: (context) => RicoHelpPage()),
               );
             },
           ),
@@ -80,7 +80,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AboutPage()),
+                MaterialPageRoute(builder: (context) => RicoAboutPage()),
               );
             },
           ),

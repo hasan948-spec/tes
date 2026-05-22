@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tes/pages/favorite_page.dart';
-import 'package:tes/services/favorite_service.dart';
-import 'package:tes/services/play_service.dart';
+import 'package:tes/pages/hasan_favorite_page.dart';
+import 'package:tes/services/hasan_favorite_service.dart';
+import 'package:tes/services/hasan_play_service.dart';
 
 class CategoryWidget extends StatefulWidget {
   const CategoryWidget({super.key});
@@ -43,22 +43,46 @@ class _CategoryWidgetState extends State<CategoryWidget> {
             onPressed: () {
               setState(() {
                 cc = !cc;
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: Text(
-                      "Konten telah dis like dari anda",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    backgroundColor: Colors.blue.shade900,
-                  ),
-                );
               });
             },
             child: Icon(cc ? Icons.thumb_down : Icons.thumb_down_alt_outlined),
           ),
+          SizedBox(width: 5),
         ],
       ),
     );
   }
 }
+
+//showModalBottomSheet(
+//   context: context,
+//   builder: (context) {
+//     return SizedBox(
+//       width: double.infinity,
+//       height: 500,
+//       child: Padding(
+//         padding: const EdgeInsets.all(10),
+//         child: Column(
+//           children: [
+//             Container(
+//               width: 100,
+//               height: 4,
+//               decoration: BoxDecoration(
+//                 color: Colors.grey,
+//                 borderRadius: BorderRadius.circular(8),
+//               ),
+//             ),
+//             Text(
+//               inf[x].ttl,
+//               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+//             ),
+//             SizedBox(height: 15),
+//             Text(inf[x].dsc),
+//             SizedBox(height: 20,),
+//             Image.asset(inf[x].img,height: 250,),
+//           ],
+//         ),
+//       ),
+//     );
+// },
+//);

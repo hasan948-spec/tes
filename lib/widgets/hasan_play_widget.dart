@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PlayWidget extends StatelessWidget {
+class HasanPlayWidget extends StatelessWidget {
   final String img;
   final String ttl;
   final String views;
   final String author;
   final VoidCallback onTap;
 
-  PlayWidget({
+  HasanPlayWidget({
     super.key,
     required this.img,
     required this.ttl,

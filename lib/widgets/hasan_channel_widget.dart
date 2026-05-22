@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:tes/models/follow_model.dart';
-import 'package:tes/pages/follow_page.dart';
-import 'package:tes/services/follow_service.dart';
-import 'package:tes/services/play_service.dart';
+import 'package:tes/models/hasan_follow_model.dart';
+import 'package:tes/pages/hasan_follow_page.dart';
+import 'package:tes/services/hasan_follow_service.dart';
+import 'package:tes/services/hasan_play_service.dart';
 
-class ChannelWidget extends StatefulWidget {
-  const ChannelWidget({super.key});
+class HasanChannelWidget extends StatefulWidget {
+  const HasanChannelWidget({super.key});
 
   @override
-  State<ChannelWidget> createState() => _ChannelWidgetState();
+  State<HasanChannelWidget> createState() => _HasanChannelWidgetState();
 }
 
-class _ChannelWidgetState extends State<ChannelWidget> {
+class _HasanChannelWidgetState extends State<HasanChannelWidget> {
   @override
   Widget build(BuildContext context) {
     final video = ll[0];
@@ -46,7 +46,7 @@ class _ChannelWidgetState extends State<ChannelWidget> {
         ElevatedButton(
           onPressed: () {
             nyr.add(
-              FollowModel(
+              HasanFollowModel(
                 name: video.chnName,
                 img: video.imgChn,
                 jmlflw: video.views,
@@ -56,7 +56,7 @@ class _ChannelWidgetState extends State<ChannelWidget> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => FollowPage(),
+                builder: (_) => HasanFollowPage(),
               ),
             );
           },

@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:tes/pages/akun_page.dart';
-import 'package:tes/pages/favorite_page.dart';
-import 'package:tes/pages/follow_page.dart';
-import 'package:tes/pages/home_page.dart';
+import 'package:tes/pages/hasan_akun_page.dart';
+import 'package:tes/pages/hasan_favorite_page.dart';
+import 'package:tes/pages/hasan_follow_page.dart';
+import 'package:tes/pages/hasan_home_page.dart';
 
 
-class DashboardPage extends StatefulWidget {
-  const DashboardPage({super.key});
+class HasanDashboardPage extends StatefulWidget {
+  const HasanDashboardPage({super.key});
 
   @override
-  State<DashboardPage> createState() => _DashboardPageState();
+  State<HasanDashboardPage> createState() => _HasanDashboardPageState();
 }
 
-class _DashboardPageState extends State<DashboardPage> {
+class _HasanDashboardPageState extends State<HasanDashboardPage> {
   int selectedIndex = 0;
   List<Widget> pages = [
-    HomePage(),
+    HasanHomePage(),
     FavoritePage(),
-    FollowPage(),
-    AkunPage(),
+    HasanFollowPage(),
+    HasanAkunPage(),
   ];
 
   Map<int, List<dynamic>> pages2 = {
-    0: [HomePage(), 'Home', Icons.home],
+    0: [HasanHomePage(), 'Home', Icons.home],
     1: [FavoritePage(), 'Favorite', Icons.favorite],
-    2: [FollowPage(), 'follow', Icons.people],
-    3: [AkunPage(), 'Akun', Icons.person],
+    2: [HasanFollowPage(), 'follow', Icons.people],
+    3: [HasanAkunPage(), 'Akun', Icons.person],
   };
   @override
   void initState() {

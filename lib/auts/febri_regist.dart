@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:tes/auts/febri_login.dart';
-import 'package:tes/pages/dashboard_page.dart';
+import 'package:tes/pages/hasan_dashboard_page.dart';
 
 class FebriRegister extends StatefulWidget {
   const FebriRegister({super.key});
@@ -159,7 +159,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                       if (_mail.text == _mail.text && _pwe.text == _pwea.text) {
                         showDialog(
                           context: context,
-                          builder: (context) => DashboardPage(),
+                          builder: (context) => HasanDashboardPage(),
                         );
                       } else if (_pwe.text.isEmpty || _pwea.text.isEmpty) {
                         showDialog(

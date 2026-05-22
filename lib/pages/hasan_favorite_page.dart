@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tes/services/favorite_service.dart';
-import 'package:tes/widgets/drawer_widget.dart';
-import 'package:tes/widgets/favorite_widget.dart';
-import 'play_page.dart';
+import 'package:tes/services/hasan_favorite_service.dart';
+import 'package:tes/widgets/hasan_drawer_widget.dart';
+import 'package:tes/widgets/hasan_favorite_widget.dart';
+import 'hasan_play_page.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({super.key});
@@ -24,12 +24,12 @@ class FavoritePage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      drawer: DrawerWidget(),
+      drawer: HasanDrawerWidget(),
       body: ListView.builder(
         itemCount: favorite.length,
           itemBuilder: (context, index) {
             final video = favorite[index];
-            return FavoriteWidget(
+            return HasanFavoriteWidget(
               thumb: video.thumbnailUrl,
               ttl: video.tittle,
               views: video.views,
@@ -40,7 +40,7 @@ class FavoritePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        PlayPage(videoId: video.videoId),
+                        HasanPlayPage(videoId: video.videoId),
                   ),
                 );
               },

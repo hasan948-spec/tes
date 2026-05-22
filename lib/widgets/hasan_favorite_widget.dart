@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FavoriteWidget extends StatelessWidget {
+class HasanFavoriteWidget extends StatelessWidget {
   final String thumb;
   final String ttl;
   final String views;
@@ -8,7 +8,7 @@ class FavoriteWidget extends StatelessWidget {
   final String likes;
   final VoidCallback onTap;
 
-  FavoriteWidget({
+  HasanFavoriteWidget({
     super.key,
     required this.thumb,
     required this.ttl,

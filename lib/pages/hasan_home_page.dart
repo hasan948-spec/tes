@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:tes/pages/play_page.dart';
-import 'package:tes/services/play_service.dart';
-import 'package:tes/widgets/drawer_widget.dart';
-import 'package:tes/widgets/video_widget.dart';
+import 'package:tes/pages/hasan_play_page.dart';
+import 'package:tes/services/hasan_play_service.dart';
+import 'package:tes/widgets/hasan_drawer_widget.dart';
+import 'package:tes/widgets/hasan_video_widget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HasanHomePage extends StatefulWidget {
+  const HasanHomePage({super.key});
 
+  @override
+  State<HasanHomePage> createState() => _HasanHomePageState();
+}
+
+class _HasanHomePageState extends State<HasanHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade900,
-
       appBar: AppBar(
         backgroundColor: Colors.blue.shade900,
-        title: const Text(
-          "MeleTubee",
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
+        title: Text("MeleTubee", style: TextStyle(color: Colors.white)),
       ),
-      drawer: DrawerWidget(),
+      backgroundColor: Colors.blue.shade900,
+      drawer: HasanDrawerWidget(),
       body: ListView.builder(
         itemCount: ll.length,
         itemBuilder: (context, index) {
@@ -30,13 +30,11 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PlayPage(
-                    videoId: v.videoId,
-                  ),
+                  builder: (context) => HasanPlayPage(videoId: v.videoId),
                 ),
               );
             },
-            child: VideoWidget(
+            child: HasanVideoWidget(
               img: v.thumbnailUrl,
               sbtl: v.tittle,
               view: v.views,

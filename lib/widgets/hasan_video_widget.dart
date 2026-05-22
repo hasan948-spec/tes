@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class VideoWidget extends StatelessWidget {
+class HasanVideoWidget extends StatelessWidget {
   final String img;
   final String view;
   final String sbtl;
   final String favor;
   final String chn;
 
-  const VideoWidget({
+  const HasanVideoWidget({
     super.key,
     required this.img,
     required this.view,
@@ -26,7 +26,7 @@ class VideoWidget extends StatelessWidget {
             width: 140,
             height: 80,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(12),
               image: DecorationImage(image: AssetImage(img), fit: BoxFit.cover),
             ),
           ),

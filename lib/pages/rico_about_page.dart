@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class HelpPage extends StatefulWidget {
-  const HelpPage({super.key});
+class RicoAboutPage extends StatefulWidget {
+  const RicoAboutPage({super.key});
 
   @override
-  State<HelpPage> createState() => _HelpPageState();
+  State<RicoAboutPage> createState() => _RicoAboutPageState();
 }
 
-class _HelpPageState extends State<HelpPage> {
+class _RicoAboutPageState extends State<RicoAboutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Back", style: TextStyle(fontWeight: FontWeight.bold)),
         flexibleSpace: Container(
-          decoration: BoxDecoration(color: Color(0xFF0019A7)),
+          decoration: BoxDecoration(color: Colors.blue.shade900),
         ),
       ),
       backgroundColor: Color(0xFF0019A7),
@@ -23,9 +23,9 @@ class _HelpPageState extends State<HelpPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             ListTile(
-              leading: Icon(Icons.privacy_tip, size: 25, color: Colors.white),
+              leading: Icon(Icons.info, size: 25, color: Colors.white),
               title: Text(
-                "Privacy Policy",
+                "About",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
@@ -34,9 +34,11 @@ class _HelpPageState extends State<HelpPage> {
               ),
             ),
             Text(
-              "If you experience problems while using the application, please make sure your internet connection is stable and the application is updated to the latest version.For further assistance, please contact our support team through the contact feature available in the application",
+              "This app was designed to provide a simple, fast, and convenient experience for users. With a simple interface and modern features, users can enjoy a variety of content, save favorites, and navigate the app more easily. Thank you for using our app",
               style: TextStyle(color: Colors.white),
             ),
+            SizedBox(height: 25),
+            Text("Version 019.86", style: TextStyle(color: Colors.white)),
           ],
         ),
       ),

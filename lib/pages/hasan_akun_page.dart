@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:tes/auts/febri_login.dart';
-import 'package:tes/widgets/drawer_widget.dart';
+import 'package:tes/widgets/hasan_drawer_widget.dart';
 
-class AkunPage extends StatelessWidget {
-  const AkunPage({super.key});
+class HasanAkunPage extends StatelessWidget {
+  const HasanAkunPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0019A7),
-
       appBar: AppBar(
-        backgroundColor: Color(0xFF0019A7),
-        centerTitle: true,
+        backgroundColor: Colors.blue.shade900,
         title: Text(
           "Akun",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
-      drawer: DrawerWidget(),
+      backgroundColor: Colors.blue.shade900,
+      drawer: HasanDrawerWidget(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(20),
