@@ -34,12 +34,12 @@ class _Febri_SplashScreenState extends State<Febri_SplashScreen> {
         width: size.width,
         height: size.height,
         decoration: BoxDecoration(
-         color: Color(0xFF0019A7)
+         color: Colors.blue.shade900
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/ruokff.png'),
+            Image.asset('assets/images/ruokff.png',height: 300,),
             Text(
               'MeleTube',
               style: TextStyle(
@@ -48,7 +48,7 @@ class _Febri_SplashScreenState extends State<Febri_SplashScreen> {
                 color: Colors.white70,
               ),
             ),
-
+            CircularProgressIndicator(color: Colors.white)
           ],
         ),
       ),

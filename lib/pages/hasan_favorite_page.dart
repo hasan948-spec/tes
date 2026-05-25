@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tes/services/hasan_favorite_service.dart';
-import 'package:tes/widgets/hasan_drawer_widget.dart';
+import 'package:tes/widgets/Rico_drawer_widget.dart';
 import 'package:tes/widgets/hasan_favorite_widget.dart';
 import 'hasan_play_page.dart';
 
@@ -10,9 +10,9 @@ class FavoritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0019A7),
+      backgroundColor: Colors.blue.shade900,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0019A7),
+        backgroundColor: Colors.blue.shade900,
         elevation: 0,
         title: Text(
           "Favorite",
@@ -22,29 +22,30 @@ class FavoritePage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        centerTitle: true,
+        actions: [
+          CircleAvatar(backgroundImage: AssetImage("assets/images/owo.jpg")),
+        ],
       ),
-      drawer: HasanDrawerWidget(),
+      drawer: RicoDrawerWidget(),
       body: ListView.builder(
         itemCount: favorite.length,
-          itemBuilder: (context, index) {
-            final video = favorite[index];
-            return HasanFavoriteWidget(
-              thumb: video.thumbnailUrl,
-              ttl: video.tittle,
-              views: video.views,
-              author: video.chnName,
-              likes: video.likes,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        HasanPlayPage(videoId: video.videoId),
-                  ),
-                );
-              },
-            );
+        itemBuilder: (context, index) {
+          final video = favorite[index];
+          return HasanFavoriteWidget(
+            thumb: video.thumbnailUrl,
+            ttl: video.tittle,
+            views: video.views,
+            author: video.chnName,
+            likes: video.likes,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HasanPlayPage(videoId: video.videoId),
+                ),
+              );
+            },
+          );
         },
       ),
     );

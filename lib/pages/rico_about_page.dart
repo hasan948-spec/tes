@@ -12,12 +12,12 @@ class _RicoAboutPageState extends State<RicoAboutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Back", style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text("Back", style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
         flexibleSpace: Container(
           decoration: BoxDecoration(color: Colors.blue.shade900),
         ),
       ),
-      backgroundColor: Color(0xFF0019A7),
+      backgroundColor: Colors.blue.shade900,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

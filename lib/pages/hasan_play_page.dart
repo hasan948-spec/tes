@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tes/widgets/hasan_category_widget.dart';
 import 'package:tes/widgets/hasan_channel_widget.dart';
 import 'package:tes/widgets/hasan_rekomen_widget.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
-import 'package:tes/pages/hasan_favorite_page.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:tes/services/hasan_favorite_service.dart';
 import 'package:tes/services/hasan_play_service.dart';
 
@@ -23,19 +22,21 @@ class _HasanPlayPageState extends State<HasanPlayPage> {
   void initState() {
     super.initState();
 
-    controller = YoutubePlayerController.fromVideoId(
-      videoId: widget.videoId,
-      autoPlay: true,
-      params: YoutubePlayerParams(
-        showControls: true,
-        showFullscreenButton: true,
+    controller = YoutubePlayerController(
+      initialVideoId: widget.videoId,
+      flags: YoutubePlayerFlags(
+        autoPlay: true,
+        mute: false,
+        enableCaption: false,
+        forceHD: true,
+        
       ),
     );
   }
 
   @override
   void dispose() {
-    controller.close();
+    controller.dispose();
     super.dispose();
   }
 
@@ -47,10 +48,7 @@ class _HasanPlayPageState extends State<HasanPlayPage> {
         backgroundColor: Colors.blue.shade900,
         title: Text(
           "MeleTube",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
       backgroundColor: Colors.blue.shade900,
@@ -59,8 +57,11 @@ class _HasanPlayPageState extends State<HasanPlayPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AspectRatio(
-              aspectRatio: 20 / 9,
-              child: YoutubePlayer(controller: controller),
+              aspectRatio: 16 / 9,
+              child: YoutubePlayer(
+                controller: controller,
+                showVideoProgressIndicator: true,
+              ),
             ),
             Padding(
               padding: EdgeInsets.all(15),
@@ -78,16 +79,14 @@ class _HasanPlayPageState extends State<HasanPlayPage> {
                   SizedBox(height: 5),
                   Text(
                     "${video.views} view",
-                    style: TextStyle(
-                      color: Colors.white70,
-                    ),
+                    style: TextStyle(color: Colors.white70),
                   ),
                   SizedBox(height: 12),
-                  CategoryWidget(),
+                  CategoryWidget(videoId: widget.videoId,),
                   SizedBox(height: 20),
-                  HasanChannelWidget(),
+                  HasanChannelWidget(videoId: widget.videoId),
                   SizedBox(height: 20),
-                  HasanRekomenWidget(videoId: video.videoId)
+                  HasanRekomenWidget(videoId: video.videoId),
                 ],
               ),
             ),

@@ -20,7 +20,7 @@ List<HasanPlayModel> ll = [
     videoId: "MTEXgUp6owA",
     desk:
         "VIDEO BIKIN NGAKAK!! UZUMAKI NEYMAR KUN !! SELEBRASI SPESIAL & TEMBAKAN RASENGAN SHURIKEN !!",
-    chnName: "Ruok",
+    chnName: "Pes Indonesian",
     imgChn: "assets/images/gojo.jpg",
     subs: "35jt"
   ),
@@ -37,7 +37,7 @@ List<HasanPlayModel> ll = [
   ),
   HasanPlayModel(
     tittle:
-        "FUNKOT - MUTIARA [ADAKAH KENYAMANAN DIHATIMU] NEW 2025 BY DJ ALMIRA BERTO",
+        "FUNKOT - MUTIARA BY DJ ALMIRA BERTO",
     views: "18K",
     likes: "80K",
     thumbnailUrl: "assets/images/almira.jpg",
@@ -74,7 +74,7 @@ List<HasanPlayModel> ll = [
   HasanPlayModel(
     tittle: "WOWWWW belajar coding untuk pemula dijamin work no paswot",
     views: "200K",
-    likes: "20K like",
+    likes: "20K",
     thumbnailUrl: "assets/images/blcd.jpg",
     videoId: "LooycZiMn6s",
     desk: "tutorial coding untuk lu lu pada",

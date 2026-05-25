@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:tes/pages/hasan_akun_page.dart';
+import 'package:tes/pages/hasan_myAccount_page.dart';
 import 'package:tes/pages/hasan_favorite_page.dart';
 import 'package:tes/pages/hasan_follow_page.dart';
 import 'package:tes/pages/hasan_home_page.dart';
 
-
 class HasanDashboardPage extends StatefulWidget {
-  const HasanDashboardPage({super.key});
+  final String username;
+  final String email;
+
+  const HasanDashboardPage({
+    super.key,
+    required this.username, required this.email,
+  });
 
   @override
   State<HasanDashboardPage> createState() => _HasanDashboardPageState();
@@ -14,22 +19,23 @@ class HasanDashboardPage extends StatefulWidget {
 
 class _HasanDashboardPageState extends State<HasanDashboardPage> {
   int selectedIndex = 0;
-  List<Widget> pages = [
-    HasanHomePage(),
-    FavoritePage(),
-    HasanFollowPage(),
-    HasanAkunPage(),
-  ];
-
-  Map<int, List<dynamic>> pages2 = {
-    0: [HasanHomePage(), 'Home', Icons.home],
-    1: [FavoritePage(), 'Favorite', Icons.favorite],
-    2: [HasanFollowPage(), 'follow', Icons.people],
-    3: [HasanAkunPage(), 'Akun', Icons.person],
-  };
+  late Map<int, List<dynamic>> pages2;
   @override
   void initState() {
     super.initState();
+
+    pages2 = {
+      0: [HasanHomePage(), 'Home', Icons.home],
+      1: [FavoritePage(), 'Favorite', Icons.favorite],
+      2: [HasanFollowPage(), 'Follow', Icons.people],
+      3: [
+        HasanMyAccountPage(
+          username: widget.username, email: widget.email, password: "",
+        ),
+        'Akun',
+        Icons.person,
+      ],
+    };
   }
 
   @override
@@ -37,7 +43,6 @@ class _HasanDashboardPageState extends State<HasanDashboardPage> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blue.shade900,
-        elevation: 5,
         currentIndex: selectedIndex,
         onTap: (value) {
           setState(() {
@@ -47,9 +52,17 @@ class _HasanDashboardPageState extends State<HasanDashboardPage> {
         items: pages2.entries.map((d) {
           return BottomNavigationBarItem(
             backgroundColor: Colors.blue.shade900,
-            icon: Icon(d.value[2], size: 32,color: Colors.black26),
+            icon: Icon(
+              d.value[2],
+              size: 32,
+              color: Colors.black26,
+            ),
+            activeIcon: Icon(
+              d.value[2],
+              size: 32,
+              color: Colors.white,
+            ),
             label: d.value[1],
-            activeIcon: Icon(d.value[2], size: 32, color: Colors.white,),
           );
         }).toList(),
       ),

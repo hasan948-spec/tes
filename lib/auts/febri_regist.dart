@@ -11,6 +11,7 @@ class FebriRegister extends StatefulWidget {
 }
 
 class _FebriRegisterState extends State<FebriRegister> {
+  final TextEditingController _usr = TextEditingController();
   final TextEditingController _pwe = TextEditingController();
   final TextEditingController _pwea = TextEditingController();
   final TextEditingController _mail = TextEditingController();
@@ -31,6 +32,7 @@ class _FebriRegisterState extends State<FebriRegister> {
       }
     });
   }
+
   void mata() {
     setState(() {
       if (_regs) {
@@ -78,6 +80,30 @@ class _FebriRegisterState extends State<FebriRegister> {
                 ],
               ),
               TextField(
+                controller: _usr,
+                decoration: InputDecoration(
+                  hintText: "Username",
+                  fillColor: Colors.white,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Email',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+              TextField(
                 controller: _mail,
                 decoration: InputDecoration(
                   hintText: "Username",
@@ -88,7 +114,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   ),
                 ),
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 20),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -114,7 +140,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   suffixIcon: IconButton(onPressed: eye, icon: Icon(_eye)),
                 ),
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 20),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -140,7 +166,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   suffixIcon: IconButton(onPressed: mata, icon: Icon(_mata)),
                 ),
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -156,16 +182,29 @@ class _FebriRegisterState extends State<FebriRegister> {
                   SizedBox(width: 50),
                   ElevatedButton(
                     onPressed: () {
-                      if (_mail.text == _mail.text && _pwe.text == _pwea.text) {
+                      if (_pwe.text != _pwea.text) {
                         showDialog(
                           context: context,
-                          builder: (context) => HasanDashboardPage(),
+                          builder: (context) => AlertDialog(
+                            title: Text("Mohon masukkan Passowrd yang sama"),
+                          ),
                         );
-                      } else if (_pwe.text.isEmpty || _pwea.text.isEmpty) {
+                      } else if (_usr.text.isEmpty ||
+                          _pwea.text.isEmpty ||
+                          _pwe.text.isEmpty ||
+                          _mail.text.isEmpty) {
                         showDialog(
                           context: context,
                           builder: (context) =>
                               AlertDialog(title: Text("GAGAL Regist")),
+                        );
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (context) => HasanDashboardPage(
+                            username: _usr.text,
+                            email: "${_mail.text}@meletube.com",
+                          ),
                         );
                       }
                     },

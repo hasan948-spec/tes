@@ -41,7 +41,7 @@ class _FebriLoginState extends State<FebriLogin> {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 children: [
-                  SizedBox(height: 40),
+                  SizedBox(height: 120),
                   Text(
                     "Login",
                     style: TextStyle(
@@ -57,7 +57,7 @@ class _FebriLoginState extends State<FebriLogin> {
                     children: [
                       SizedBox(width: 10),
                       Text(
-                        "Username atau Gmail",
+                        "Username",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white70,
@@ -70,6 +70,34 @@ class _FebriLoginState extends State<FebriLogin> {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       hintText: 'username',
+                      alignLabelWithHint: true,
+                      focusColor: Colors.transparent,
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(width: 10),
+                      Text(
+                        "Email",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white70,
+                        ),
+                      ),
+                    ],
+                  ),
+                  TextField(
+                    controller: _email,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      hintText: 'email',
                       alignLabelWithHint: true,
                       focusColor: Colors.transparent,
                       fillColor: Colors.white,
@@ -152,12 +180,21 @@ class _FebriLoginState extends State<FebriLogin> {
                       ),
                     ),
                     onPressed: () {
-                      if (_username.text == "mpeks" ||
-                          _username.text == "Sir Owo" &&
-                              _password.text == "owo ") {
+                      if ((_username.text == "Hasan" &&
+                              _email.text == "hasan@meletube.com" &&
+                              _password.text == "HanzBrudass") ||
+                          (_username.text == "Rico" &&
+                              _email.text == "rico@meletube.com" &&
+                              _password.text == "ambrik") ||
+                          _username.text == "Febri" &&
+                              _email.text == "febri@meletube.com" &&
+                              _password.text == "PardiKnock") {
                         showDialog(
                           context: context,
-                          builder: (context) => HasanDashboardPage(),
+                          builder: (context) => HasanDashboardPage(
+                            username: _username.text,
+                            email: _email.text,
+                          ),
                         );
                       } else {
                         showDialog(

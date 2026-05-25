@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HasanFavoriteWidget extends StatelessWidget {
+class HasanFavoriteWidget extends StatefulWidget {
   final String thumb;
   final String ttl;
   final String views;
   final String author;
   final String likes;
   final VoidCallback onTap;
-
-  HasanFavoriteWidget({
+  const HasanFavoriteWidget({
     super.key,
     required this.thumb,
     required this.ttl,
@@ -19,10 +18,15 @@ class HasanFavoriteWidget extends StatelessWidget {
   });
 
   @override
+  State<HasanFavoriteWidget> createState() => _HasanFavoriteWidgetState();
+}
+
+class _HasanFavoriteWidgetState extends State<HasanFavoriteWidget> {
+  bool liked = false;
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
-
+      onTap: widget.onTap,
       child: Container(
         margin: EdgeInsets.all(20),
         child: Row(
@@ -31,67 +35,45 @@ class HasanFavoriteWidget extends StatelessWidget {
             Container(
               width: 160,
               height: 100,
-
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-
                 image: DecorationImage(
-                  image: AssetImage(thumb),
+                  image: AssetImage(widget.thumb),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-
             SizedBox(width: 12),
-
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Text(
-                    ttl,
+                    widget.ttl,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
                     ),
                   ),
-
                   SizedBox(height: 4),
-
                   Text(
-                    views,
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 12,
-                    ),
+                    widget.views,
+                    style: TextStyle(color: Colors.white70, fontSize: 12),
                   ),
-
                   Text(
-                    author,
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 12,
-                    ),
+                    widget.author,
+                    style: TextStyle(color: Colors.white70, fontSize: 12),
                   ),
                   Row(
                     children: [
-                      Icon(
-                        Icons.favorite,
-                        color: Colors.red,
-                        size: 12,
-                      ),
+                      Icon(Icons.favorite, color: Colors.red, size: 12),
                       SizedBox(width: 4),
                       Text(
-                        likes,
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 12,
-                        ),
+                        widget.likes,
+                        style: TextStyle(color: Colors.white70, fontSize: 12),
                       ),
                     ],
                   ),

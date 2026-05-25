@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SearchWidget extends StatefulWidget {
-  const SearchWidget({super.key});
+class HasanSearchWidget extends StatefulWidget {
+  const HasanSearchWidget({super.key});
 
   @override
-  State<SearchWidget> createState() => _SearchWidgetState();
+  State<HasanSearchWidget> createState() => _HasanSearchWidgetState();
 }
 
-class _SearchWidgetState extends State<SearchWidget> {
+class _HasanSearchWidgetState extends State<HasanSearchWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(

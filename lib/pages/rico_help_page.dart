@@ -12,20 +12,20 @@ class _RicoHelpPageState extends State<RicoHelpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Back", style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text("Back", style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
         flexibleSpace: Container(
           decoration: BoxDecoration(color: Colors.blue.shade900),
         ),
       ),
-      backgroundColor: Color(0xFF0019A7),
+      backgroundColor: Colors.blue.shade900,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             ListTile(
-              leading: Icon(Icons.privacy_tip, size: 25, color: Colors.white),
+              leading: Icon(Icons.help, size: 25, color: Colors.white),
               title: Text(
-                "Privacy Policy",
+                "Help",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
