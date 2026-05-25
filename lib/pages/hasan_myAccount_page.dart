@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tes/auts/febri_login.dart';
+import 'package:tes/pages/Febri_noHPltertaut.dart';
 import 'package:tes/pages/hasan_profile_page.dart';
 import 'package:tes/widgets/Rico_drawer_widget.dart';
 
@@ -102,7 +103,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HasanProfilePage()),
+                  MaterialPageRoute(builder: (context) => FebriMailtertaut()),
                 );
               },
             ),

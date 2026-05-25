@@ -3,13 +3,12 @@ import 'package:tes/widgets/hasan_category_widget.dart';
 import 'package:tes/widgets/hasan_channel_widget.dart';
 import 'package:tes/widgets/hasan_rekomen_widget.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:tes/services/hasan_favorite_service.dart';
 import 'package:tes/services/hasan_play_service.dart';
 
 class HasanPlayPage extends StatefulWidget {
   final String videoId;
 
-  HasanPlayPage({super.key, required this.videoId});
+  const HasanPlayPage({super.key, required this.videoId});
 
   @override
   State<HasanPlayPage> createState() => _HasanPlayPageState();
