@@ -28,7 +28,7 @@ class _FebriMailtertautState extends State<FebriMailtertaut> {
             SizedBox(height: 15),
             SizedBox(
               height: 50,
-              width: 450,
+              width: 400,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
