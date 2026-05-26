@@ -75,7 +75,7 @@ class _FebriLoginState extends State<FebriLogin> {
                       fillColor: Colors.white,
                       filled: true,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                   ),
@@ -103,7 +103,7 @@ class _FebriLoginState extends State<FebriLogin> {
                       fillColor: Colors.white,
                       filled: true,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                   ),
@@ -140,7 +140,7 @@ class _FebriLoginState extends State<FebriLogin> {
                       fillColor: Colors.white,
                       filled: true,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                   ),
@@ -171,40 +171,45 @@ class _FebriLoginState extends State<FebriLogin> {
                       ),
                     ],
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                  SizedBox(height: 20),
+                  SizedBox(
+                    height: 40,
+                    width: 520,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
+                      onPressed: () {
+                        if ((_username.text == "Hasan" &&
+                                _email.text == "hasan@meletube.com" &&
+                                _password.text == "HanzBrudass") ||
+                            (_username.text == "Rico" &&
+                                _email.text == "rico@meletube.com" &&
+                                _password.text == "ambrik") ||
+                            _username.text == "Febri" &&
+                                _email.text == "gg" &&
+                                _password.text == "gg") {
+                          showDialog(
+                            context: context,
+                            builder: (context) => HasanDashboardPage(
+                              username: _username.text,
+                              email: _email.text,
+                            ),
+                          );
+                        } else {
+                          showDialog(
+                            context: context,
+                            builder: (context) =>
+                                AlertDialog(title: Text("Login Gagal")),
+                          );
+                        }
+                      },
+                      child: Text("Login"),
                     ),
-                    onPressed: () {
-                      if ((_username.text == "Hasan" &&
-                              _email.text == "hasan@meletube.com" &&
-                              _password.text == "HanzBrudass") ||
-                          (_username.text == "Rico" &&
-                              _email.text == "rico@meletube.com" &&
-                              _password.text == "ambrik") ||
-                          _username.text == "Febri" &&
-                              _email.text == "gg" &&
-                              _password.text == "gg") {
-                        showDialog(
-                          context: context,
-                          builder: (context) => HasanDashboardPage(
-                            username: _username.text,
-                            email: _email.text,
-                          ),
-                        );
-                      } else {
-                        showDialog(
-                          context: context,
-                          builder: (context) =>
-                              AlertDialog(title: Text("Login Gagal")),
-                        );
-                      }
-                    },
-                    child: Text("Login"),
                   ),
                 ],
               ),

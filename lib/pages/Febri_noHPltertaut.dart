@@ -31,7 +31,7 @@ class _FebriMailtertautState extends State<FebriMailtertaut> {
               width: 400,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
                 ),
                 child: Center(
@@ -48,7 +48,7 @@ class _FebriMailtertautState extends State<FebriMailtertaut> {
               width: 400,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
                 ),
                 child: Center(
@@ -65,7 +65,7 @@ class _FebriMailtertautState extends State<FebriMailtertaut> {
               width: 400,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
                 ),
                 child: Center(
@@ -82,7 +82,7 @@ class _FebriMailtertautState extends State<FebriMailtertaut> {
               width: 400,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
                 ),
                 child: Center(

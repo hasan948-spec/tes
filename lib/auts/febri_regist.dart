@@ -86,7 +86,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                 ),
               ),
@@ -110,7 +110,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                 ),
               ),
@@ -135,7 +135,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                   fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   suffixIcon: IconButton(onPressed: eye, icon: Icon(_eye)),
                 ),
@@ -161,33 +161,43 @@ class _FebriRegisterState extends State<FebriRegister> {
                   fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   suffixIcon: IconButton(onPressed: mata, icon: Icon(_mata)),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 35,
-                    width: 200,
+                    height: 45,
+                    width: 180,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadiusGeometry.circular(8),
+                        ),
+                      ),
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => FebriLogin()),
                         );
                       },
-                      child: Text("Batal"),
+                      child: Text("Batal",style: TextStyle(color: Colors.black),),
                     ),
                   ),
-                  SizedBox(width: 50),
+                  SizedBox(width: 5),
                   Container(
-                    height: 35,
-                    width: 200,
+                    height: 45,
+                    width: 180,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadiusGeometry.circular(8),
+                        ),
+                      ),
                       onPressed: () {
                         if (_pwe.text != _pwea.text) {
                           showDialog(
@@ -215,7 +225,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                           );
                         }
                       },
-                      child: Text("Regist"),
+                      child: Text("Regist",style: TextStyle(color: Colors.black),),
                     ),
                   ),
                 ],

@@ -155,7 +155,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
                 );
               },
             ),
-            SizedBox(height: 290),
+            SizedBox(height: 170),
             SizedBox(
               width: 400,
               height: 50,
