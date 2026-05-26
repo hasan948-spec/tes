@@ -172,7 +172,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                 children: [
                   Container(
                     height: 35,
-                    width: 250,
+                    width: 200,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
@@ -186,9 +186,8 @@ class _FebriRegisterState extends State<FebriRegister> {
                   SizedBox(width: 50),
                   Container(
                     height: 35,
-                    width: 250,
+                    width: 200,
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(8))),
                       onPressed: () {
                         if (_pwe.text != _pwea.text) {
                           showDialog(

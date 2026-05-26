@@ -22,7 +22,9 @@ class _FebriMailtertautState extends State<FebriMailtertaut> {
       body: Center(
         child: Column(
           children: [
-            Icon(Icons.mail, color: Colors.white, size: 200),
+            Icon(Icons.phone_android, color: Colors.white, size: 200),
+            SizedBox(height: 10),
+            Text("NO HP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.white),),
             SizedBox(height: 15),
             SizedBox(
               height: 50,
@@ -43,7 +45,7 @@ class _FebriMailtertautState extends State<FebriMailtertaut> {
             SizedBox(height: 10),
             SizedBox(
               height: 50,
-              width: 450,
+              width: 400,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
@@ -60,7 +62,7 @@ class _FebriMailtertautState extends State<FebriMailtertaut> {
             SizedBox(height: 10),
             SizedBox(
               height: 50,
-              width: 450,
+              width: 400,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
@@ -77,7 +79,7 @@ class _FebriMailtertautState extends State<FebriMailtertaut> {
             SizedBox(height: 10),
             SizedBox(
               height: 50,
-              width: 450,
+              width: 400,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
