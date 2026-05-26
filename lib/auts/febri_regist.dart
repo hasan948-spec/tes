@@ -170,45 +170,54 @@ class _FebriRegisterState extends State<FebriRegister> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => FebriLogin()),
-                      );
-                    },
-                    child: Text("Batal"),
+                  Container(
+                    height: 35,
+                    width: 250,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FebriLogin()),
+                        );
+                      },
+                      child: Text("Batal"),
+                    ),
                   ),
                   SizedBox(width: 50),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (_pwe.text != _pwea.text) {
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            title: Text("Mohon masukkan Passowrd yang sama"),
-                          ),
-                        );
-                      } else if (_usr.text.isEmpty ||
-                          _pwea.text.isEmpty ||
-                          _pwe.text.isEmpty ||
-                          _mail.text.isEmpty) {
-                        showDialog(
-                          context: context,
-                          builder: (context) =>
-                              AlertDialog(title: Text("GAGAL Regist")),
-                        );
-                      } else {
-                        showDialog(
-                          context: context,
-                          builder: (context) => HasanDashboardPage(
-                            username: _usr.text,
-                            email: "${_mail.text}@meletube.com",
-                          ),
-                        );
-                      }
-                    },
-                    child: Text("Regist"),
+                  Container(
+                    height: 35,
+                    width: 250,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(8))),
+                      onPressed: () {
+                        if (_pwe.text != _pwea.text) {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: Text("Mohon masukkan Passowrd yang sama"),
+                            ),
+                          );
+                        } else if (_usr.text.isEmpty ||
+                            _pwea.text.isEmpty ||
+                            _pwe.text.isEmpty ||
+                            _mail.text.isEmpty) {
+                          showDialog(
+                            context: context,
+                            builder: (context) =>
+                                AlertDialog(title: Text("GAGAL Regist")),
+                          );
+                        } else {
+                          showDialog(
+                            context: context,
+                            builder: (context) => HasanDashboardPage(
+                              username: _usr.text,
+                              email: "${_mail.text}@meletube.com",
+                            ),
+                          );
+                        }
+                      },
+                      child: Text("Regist"),
+                    ),
                   ),
                 ],
               ),
