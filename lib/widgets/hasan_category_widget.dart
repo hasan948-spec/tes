@@ -222,36 +222,3 @@ class _CategoryWidgetState extends State<CategoryWidget> {
     );
   }
 }
-
-//showModalBottomSheet(
-//   context: context,
-//   builder: (context) {
-//     return SizedBox(
-//       width: double.infinity,
-//       height: 500,
-//       child: Padding(
-//         padding: const EdgeInsets.all(10),
-//         child: Column(
-//           children: [
-//             Container(
-//               width: 100,
-//               height: 4,
-//               decoration: BoxDecoration(
-//                 color: Colors.grey,
-//                 borderRadius: BorderRadius.circular(8),
-//               ),
-//             ),
-//             Text(
-//               inf[x].ttl,
-//               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-//             ),
-//             SizedBox(height: 15),
-//             Text(inf[x].dsc),
-//             SizedBox(height: 20,),
-//             Image.asset(inf[x].img,height: 250,),
-//           ],
-//         ),
-//       ),
-//     );
-// },
-//);

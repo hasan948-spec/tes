@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tes/auts/febri_login.dart';
 import 'package:tes/pages/Febri_noHPltertaut.dart';
+import 'package:tes/pages/febri_chn1_page.dart';
 import 'package:tes/pages/hasan_profile_page.dart';
 import 'package:tes/widgets/Rico_drawer_widget.dart';
 
@@ -42,7 +43,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(150),
                 image: DecorationImage(
-                  image: AssetImage("assets/images/owo.jpg"),
+                  image: AssetImage("assets/images/aizen.111.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -119,7 +120,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HasanProfilePage()),
+                  MaterialPageRoute(builder: (context) => FebriChn1Page(vidi: "")),
                 );
               },
             ),

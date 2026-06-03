@@ -5,7 +5,8 @@ import 'package:tes/services/hasan_play_service.dart';
 
 class HasanChannelWidget extends StatefulWidget {
   final String videoId;
-  const HasanChannelWidget({super.key, required this.videoId});
+  final String vidi;
+  const HasanChannelWidget({super.key, required this.videoId, required this.vidi});
 
   @override
   State<HasanChannelWidget> createState() => _HasanChannelWidgetState();
@@ -20,7 +21,7 @@ class _HasanChannelWidgetState extends State<HasanChannelWidget> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HasanChannelPage(videoId: widget.videoId),
+            builder: (context) => HasanChannelPage(videoId: widget.videoId, vidi: widget.vidi,),
           ),
         );
       },
@@ -51,6 +52,3 @@ class _HasanChannelWidgetState extends State<HasanChannelWidget> {
   }
 }
 
-// ElevatedButton(onPressed: () {
-// Navigator.push(context, MaterialPageRoute(builder: (context) => ,));
-// }, child: child)

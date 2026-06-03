@@ -1,47 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:tes/widgets/hasan_category_widget.dart';
-import 'package:tes/widgets/hasan_channel_widget.dart';
-import 'package:tes/widgets/hasan_rekomen_widget.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:tes/services/hasan_play_service.dart';
 
-class HasanPlayPage extends StatefulWidget {
-  final String videoId;
+import '../services/Febri_chanel_service.dart';
+import '../services/febri_chn1_service.dart';
 
-  const HasanPlayPage({super.key, required this.videoId});
+class FebriPlayPage extends StatefulWidget {
+  final String vidi;
+
+  const FebriPlayPage({super.key, required this.vidi});
 
   @override
-  State<HasanPlayPage> createState() => _HasanPlayPageState();
+  State<FebriPlayPage> createState() => _FebriPlayPageState();
 }
 
-class _HasanPlayPageState extends State<HasanPlayPage> {
-  late YoutubePlayerController controller;
+class _FebriPlayPageState extends State<FebriPlayPage> {
+  late YoutubePlayerController bb;
 
   @override
   void initState() {
     super.initState();
 
-    controller = YoutubePlayerController(
-      initialVideoId: widget.videoId,
+    bb = YoutubePlayerController(
+      initialVideoId: widget.vidi,
       flags: YoutubePlayerFlags(
         autoPlay: true,
         mute: false,
         enableCaption: false,
         forceHD: true,
-        
       ),
     );
   }
 
   @override
   void dispose() {
-    controller.dispose();
+    bb.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final video = ll.firstWhere((e) => e.videoId == widget.videoId);
+    final video = vv.firstWhere((e) => e.vidi == widget.vidi);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue.shade900,
@@ -58,7 +56,7 @@ class _HasanPlayPageState extends State<HasanPlayPage> {
             AspectRatio(
               aspectRatio: 16 / 9,
               child: YoutubePlayer(
-                controller: controller,
+                controller: bb,
                 showVideoProgressIndicator: true,
               ),
             ),
@@ -68,7 +66,7 @@ class _HasanPlayPageState extends State<HasanPlayPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    video.desk,
+                    video.ttll,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -77,15 +75,10 @@ class _HasanPlayPageState extends State<HasanPlayPage> {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    "${video.views} view",
+                    "${video.piw} view",
                     style: TextStyle(color: Colors.white70),
                   ),
                   SizedBox(height: 12),
-                  CategoryWidget(videoId: widget.videoId,),
-                  SizedBox(height: 20),
-                  HasanChannelWidget(videoId: widget.videoId, vidi: '',),
-                  SizedBox(height: 20),
-                  HasanRekomenWidget(videoId: video.videoId),
                 ],
               ),
             ),
