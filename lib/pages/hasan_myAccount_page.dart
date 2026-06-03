@@ -3,17 +3,19 @@ import 'package:tes/auts/febri_login.dart';
 import 'package:tes/pages/Febri_noHPltertaut.dart';
 import 'package:tes/pages/febri_chn1_page.dart';
 import 'package:tes/pages/hasan_profile_page.dart';
+import 'package:tes/pages/hasan_yourVid_page.dart';
 import 'package:tes/widgets/Rico_drawer_widget.dart';
 
 class HasanMyAccountPage extends StatefulWidget {
   final String username;
   final String email;
   final String password;
+  final String vid;
   const HasanMyAccountPage({
     super.key,
     required this.username,
     required this.email,
-    required this.password,
+    required this.password, required this.vid,
   });
 
   @override
@@ -88,7 +90,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HasanProfilePage()),
+                  MaterialPageRoute(builder: (context) => HasanProfilePage(username: widget.username, email: widget.email, password: '',)),
                 );
               },
             ),
@@ -120,7 +122,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => FebriChn1Page(vidi: "")),
+                  MaterialPageRoute(builder: (context) => HasanYourvidPage(vid: widget.vid)),
                 );
               },
             ),
@@ -136,23 +138,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HasanProfilePage()),
-                );
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.lock_reset, color: Colors.white),
-              title: Text(
-                "Reset your password",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HasanProfilePage()),
+                  MaterialPageRoute(builder: (context) => FebriMailtertaut()),
                 );
               },
             ),

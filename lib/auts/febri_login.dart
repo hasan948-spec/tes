@@ -197,7 +197,7 @@ class _FebriLoginState extends State<FebriLogin> {
                             context: context,
                             builder: (context) => HasanDashboardPage(
                               username: _username.text,
-                              email: _email.text,
+                              email: _email.text, vid: '',
                             ),
                           );
                         } else {

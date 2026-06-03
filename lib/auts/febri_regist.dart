@@ -220,7 +220,7 @@ class _FebriRegisterState extends State<FebriRegister> {
                             context: context,
                             builder: (context) => HasanDashboardPage(
                               username: _usr.text,
-                              email: "${_mail.text}@meletube.com",
+                              email: "${_mail.text}@meletube.com", vid: '',
                             ),
                           );
                         }

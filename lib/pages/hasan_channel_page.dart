@@ -143,7 +143,7 @@ class _HasanChannelPageState extends State<HasanChannelPage> {
             Divider(),
             SizedBox(
               width: 420,
-              child: FebriChn1Page(vidi: widget.vidi)
+              child: HasanRekomenWidget(videoId: widget.videoId)
             )
           ],
         ),

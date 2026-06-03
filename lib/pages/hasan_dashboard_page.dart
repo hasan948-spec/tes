@@ -7,10 +7,11 @@ import 'package:tes/pages/hasan_home_page.dart';
 class HasanDashboardPage extends StatefulWidget {
   final String username;
   final String email;
+  final String vid;
 
   const HasanDashboardPage({
     super.key,
-    required this.username, required this.email,
+    required this.username, required this.email, required this.vid,
   });
 
   @override
@@ -30,7 +31,7 @@ class _HasanDashboardPageState extends State<HasanDashboardPage> {
       2: [HasanFollowPage(), 'Follow', Icons.people],
       3: [
         HasanMyAccountPage(
-          username: widget.username, email: widget.email, password: "",
+          username: widget.username, email: widget.email, password: "", vid: widget.vid,
         ),
         'Akun',
         Icons.person,
