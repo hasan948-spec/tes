@@ -28,7 +28,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
       appBar: AppBar(
         backgroundColor: Colors.blue.shade900,
         title: Text(
-          "Akun",
+          "Acount",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
