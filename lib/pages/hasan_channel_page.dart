@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tes/models/febri_chn1_model.dart';
 import 'package:tes/models/hasan_follow_model.dart';
-import 'package:tes/pages/febri_chn1_page.dart';
+import 'package:tes/models/hasan_play_model.dart';
 import 'package:tes/pages/hasan_follow_page.dart';
 import 'package:tes/services/hasan_follow_service.dart';
-import 'package:tes/widgets/hasan_rekomen_widget.dart';
-import '../services/febri_chn1_service.dart';
+import 'package:tes/widgets/febri_chn1_widget.dart';
 import '../services/hasan_play_service.dart';
 
 class HasanChannelPage extends StatefulWidget {
@@ -17,10 +17,17 @@ class HasanChannelPage extends StatefulWidget {
 }
 
 class _HasanChannelPageState extends State<HasanChannelPage> {
+  late FebriChn1Model channel;
+  late HasanPlayModel video;
+
+  @override
+  void initState() {
+    super.initState();
+    video = ll.firstWhere((element) => element.videoId == widget.videoId,);
+
+  }
   @override
   Widget build(BuildContext context) {
-    final cc = ll.firstWhere((cung) => cung.videoId == widget.videoId);
-    final gelo = vv.firstWhere((cung) => cung.vidi == widget.vidi);
     return Scaffold(
       backgroundColor: Colors.blue.shade900,
       body: SingleChildScrollView(
@@ -43,13 +50,13 @@ class _HasanChannelPageState extends State<HasanChannelPage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(150),
                       image: DecorationImage(
-                        image: AssetImage(cc.imgChn),
+                        image: AssetImage(video.imgChn),
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
                   Text(
-                    cc.chnName,
+                    video.chnName,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
                 ],
@@ -62,7 +69,7 @@ class _HasanChannelPageState extends State<HasanChannelPage> {
                 Column(
                   children: [
                     Text(
-                      cc.likes,
+                      video.likes,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -76,7 +83,7 @@ class _HasanChannelPageState extends State<HasanChannelPage> {
                 Column(
                   children: [
                     Text(
-                      cc.subs,
+                      video.subs,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -90,7 +97,7 @@ class _HasanChannelPageState extends State<HasanChannelPage> {
                 Column(
                   children: [
                     Text(
-                      cc.views,
+                      video.views,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -117,10 +124,10 @@ class _HasanChannelPageState extends State<HasanChannelPage> {
                 onPressed: () {
                   nyr.add(
                     HasanFollowModel(
-                      img: cc.imgChn,
-                      name: cc.chnName,
-                      jmlhlk: cc.likes,
-                      jmlflw: cc.subs,
+                      img: video.imgChn,
+                      name: video.chnName,
+                      jmlhlk: video.likes,
+                      jmlflw: video.subs,
                     ),
                   );
                   Navigator.push(
@@ -143,7 +150,7 @@ class _HasanChannelPageState extends State<HasanChannelPage> {
             Divider(),
             SizedBox(
               width: 420,
-              child: HasanRekomenWidget(videoId: widget.videoId)
+              child: FebriChn1Widget(vidi: widget.vidi)
             )
           ],
         ),

@@ -81,7 +81,7 @@ class _HasanPlayPageState extends State<HasanPlayPage> {
                     style: TextStyle(color: Colors.white70),
                   ),
                   SizedBox(height: 12),
-                  CategoryWidget(videoId: widget.videoId,),
+                  CategoryWidget(videoId: widget.videoId),
                   SizedBox(height: 20),
                   HasanChannelWidget(videoId: widget.videoId, vidi: '',),
                   SizedBox(height: 20),

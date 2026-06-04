@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:tes/widgets/hasan_rekomen_widget.dart';
+import 'package:tes/widgets/hasan_youVidPl_widget.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../services/hasan_youVid_service.dart';
 
 class HasanYouvidplPage extends StatefulWidget {
   final String vid;
-  const HasanYouvidplPage({super.key, required this.vid});
+  final String videoId;
+  const HasanYouvidplPage({
+    super.key,
+    required this.vid,
+    required this.videoId,
+  });
 
   @override
   State<HasanYouvidplPage> createState() => _HasanYouvidplPageState();
 }
 
 class _HasanYouvidplPageState extends State<HasanYouvidplPage> {
-  late YoutubePlayerController  contr;
+  late YoutubePlayerController contr;
 
   @override
   void initState() {
@@ -25,7 +32,6 @@ class _HasanYouvidplPageState extends State<HasanYouvidplPage> {
         mute: false,
         enableCaption: false,
         forceHD: true,
-
       ),
     );
   }
@@ -35,6 +41,7 @@ class _HasanYouvidplPageState extends State<HasanYouvidplPage> {
     contr.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     final jj = wnk.firstWhere((z) => z.vid == widget.vid);
@@ -77,7 +84,28 @@ class _HasanYouvidplPageState extends State<HasanYouvidplPage> {
                     style: TextStyle(color: Colors.white70),
                   ),
                   SizedBox(height: 12),
-
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: AssetImage("assets/images/owo.jpg"),
+                      ),
+                      SizedBox(width: 10),
+                      Column(
+                        children: [
+                          Text(
+                            "Hasan",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text("wenak", style: TextStyle(color: Colors.grey)),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Divider(),
+                  HasanRekomenWidget(videoId: widget.videoId),
                 ],
               ),
             ),

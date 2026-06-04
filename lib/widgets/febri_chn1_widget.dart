@@ -1,27 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:tes/pages/febri_play_page.dart';
+import 'package:tes/widgets/febri_chn1PL_widget.dart';
+
+import '../services/febri_chn1_service.dart';
 
 class FebriChn1Widget extends StatefulWidget {
-  final String thum;
-  final String title;
-  final String desk;
-  final String view;
-  final String like;
-  final String subs;
-  final String chname;
-  final String imgchn;
-  final VoidCallback onTap;
-  const FebriChn1Widget({
-    super.key,
-    required this.thum,
-    required this.title,
-    required this.desk,
-    required this.view,
-    required this.like,
-    required this.subs,
-    required this.chname,
-    required this.imgchn,
-    required this.onTap,
-  });
+  final String vidi;
+  const FebriChn1Widget({super.key, required this.vidi});
 
   @override
   State<FebriChn1Widget> createState() => _FebriChn1WidgetState();
@@ -32,51 +17,27 @@ class _FebriChn1WidgetState extends State<FebriChn1Widget> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
-      child: Row(
-        children: [
-          Container(
-            width: 140,
-            height: 80,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              image: DecorationImage(image: AssetImage(widget.imgchn), fit: BoxFit.cover),
-            ),
-          ),
-          SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.title,
-                  style: TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.bold,
-                  ),
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: vv.length,
+        itemBuilder: (context, index) {
+          final data = vv[index];
+          return FebriPlayWidget(
+            img: data.thumn,
+            ttl: data.ttll,
+            views: data.piw,
+            author: "Ruok",
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => FebriPlayPage(vidi: data.vidi),
                 ),
-                SizedBox(height: 5),
-                Text(
-                  widget.chname,
-                  style: TextStyle(color: Colors.white70, fontSize: 12),
-                ),
-                Text(
-                  "${widget.view} view",
-                  maxLines: 2,
-                  style: TextStyle(color: Colors.white70, fontSize: 12),
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.favorite, color: Colors.red, size: 14),
-                    SizedBox(width: 3),
-                    Text(
-                      widget.like,
-                      style: TextStyle(color: Colors.white70, fontSize: 12),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
+              );
+            },
+          );
+        },
       ),
     );
   }

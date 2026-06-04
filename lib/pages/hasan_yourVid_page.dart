@@ -33,7 +33,7 @@ class _HasanYourvidPageState extends State<HasanYourvidPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => HasanYouvidplPage(vid: v.vid),
+                  builder: (context) => HasanYouvidplPage(vid: v.vid, videoId: '',),
                 ),
               );
             },
