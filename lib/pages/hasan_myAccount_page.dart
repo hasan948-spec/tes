@@ -3,6 +3,7 @@ import 'package:tes/auts/febri_login.dart';
 import 'package:tes/pages/Febri_noHPltertaut.dart';
 import 'package:tes/pages/hasan_profile_page.dart';
 import 'package:tes/pages/hasan_yourVid_page.dart';
+import 'package:tes/pages/rico_emailtertaut_page.dart';
 import 'package:tes/widgets/Rico_drawer_widget.dart';
 
 class HasanMyAccountPage extends StatefulWidget {
@@ -137,7 +138,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => FebriMailtertaut()),
+                  MaterialPageRoute(builder: (context) => RicoEmailtertautPage()),
                 );
               },
             ),
