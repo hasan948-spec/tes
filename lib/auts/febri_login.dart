@@ -191,8 +191,8 @@ class _FebriLoginState extends State<FebriLogin> {
                                 _email.text == "rico@meletube.com" &&
                                 _password.text == "ambrik") ||
                             _username.text == "Febri" &&
-                                _email.text == "gg" &&
-                                _password.text == "gg") {
+                                _email.text == "febri@meletube.com" &&
+                                _password.text == "mbeldos") {
                           showDialog(
                             context: context,
                             builder: (context) => HasanDashboardPage(

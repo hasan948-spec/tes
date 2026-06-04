@@ -127,7 +127,7 @@ class _HasanMyAccountPageState extends State<HasanMyAccountPage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.account_circle_rounded, color: Colors.white),
+              leading: Icon(Icons.mail_lock_sharp, color: Colors.white),
               title: Text(
                 "Email Tertaut",
                 style: TextStyle(
